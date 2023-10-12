@@ -30,7 +30,7 @@ public class ArrSort {
         return (double) sum / arr.length;
     }
 
-    public static int[] bubbleSort(int[] arr) {
+    public static void bubbleSort(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -41,7 +41,6 @@ public class ArrSort {
                 }
             }
         }
-        return arr;
     }
 
     public static void printArr(int[] arr) {
@@ -52,13 +51,20 @@ public class ArrSort {
     }
 
     public static void main(String[] args) {
-        String strInput = JOptionPane.showInputDialog("Please enter the array size: ");
-        int iN = Integer.parseInt(strInput);
-        int[] arr = readArray(iN);
+        int option = JOptionPane.showConfirmDialog(null, "Do you want to create an array?");
+        int[] arr;
+
+        if (option == JOptionPane.YES_OPTION) {
+            String strInput = JOptionPane.showInputDialog("Please enter the array size: ");
+            int iN = Integer.parseInt(strInput);
+            arr = readArray(iN);
+        } else {
+            arr = new int[]{5, 7, 2, 9, 0, 1};
+        }
 
         System.out.println("Sum of array is " + getArraySum(arr));
         System.out.println("Average of array is " + getArrayAvg(arr));
-        arr = bubbleSort(arr);
+        bubbleSort(arr);
         printArr(arr);
     }
 }
