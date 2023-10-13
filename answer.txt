@@ -1,0 +1,3 @@
+- If user choose "Cancel", the following pop-up will say "You've chosen: No".
+- In order to achieve the desired effect, we set the 4th parameter of JOptionPane.showConfirmDialog() to
+JOptionPane.YES_NO_OPTION, which is JOptionPane.YES_NO_CANCEL_OPTION by default.
