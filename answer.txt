@@ -1,3 +1,17 @@
 - If user choose "Cancel", the following pop-up will say "You've chosen: No".
-- In order to achieve the desired effect, we set the 4th parameter of JOptionPane.showConfirmDialog() to
+- In order to change the number of buttons, we may set the 4th parameter of JOptionPane.showConfirmDialog() to
 JOptionPane.YES_NO_OPTION, which is JOptionPane.YES_NO_CANCEL_OPTION by default.
+- In order to change the button text, we have to use JOptionPane.showOptionDialog() instead of
+JOptionPane.showConfirmDialog(). An example is shown as below.
+
+Object[] options = {"Yes, please",
+                    "Maybe!"};
+
+int n = JOptionPane.showOptionDialog(null,
+                                    "Do you want to read the book?",
+                                    "A Silly Question",
+                                    JOptionPane.YES_NO_OPTION,
+                                    JOptionPane.QUESTION_MESSAGE,
+                                    null,
+                                    options,
+                                    options[0]);
