@@ -1,5 +1,6 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
     private List<DVD> DVDsList = new ArrayList<>();
@@ -19,16 +20,21 @@ public class Cart {
     }
 
     public int removeDVDsFromCart(DVD disc) {
-        if (DVDsList.remove(disc)) {
-            return 1;
-        } else {
-            return 0;
+        for (int i = 0; i < DVDsList.size(); i++) {
+            DVD item = DVDsList.get(i);
+
+            if (item.equals(disc)) {
+                DVDsList.remove(i);
+
+                return 1;
+            }
         }
+        return 0;
     }
 
     public float calculateCost() {
         float total_cost = 0;
-        for (DVD disc: DVDsList) {
+        for (DVD disc : DVDsList) {
             total_cost += disc.getCost();
         }
 
