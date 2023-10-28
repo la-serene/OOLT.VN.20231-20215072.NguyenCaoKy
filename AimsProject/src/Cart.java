@@ -5,7 +5,7 @@ public class Cart {
     private List<DVD> DVDsList = new ArrayList<>();
     private int DVDsQuantity = 0;
 
-    public int addDVDToCart(DVD disc) {
+    public int addDVDsToCart(DVD disc) {
         if (DVDsList.size() < MAX_NUMBERS_ORDERED) {
             DVDsList.add(disc);
             System.out.println("The disc has been added.");
