@@ -1,4 +1,6 @@
 public class DVD {
+    private static int nbDigitalVideoDiscs = 0;
+    private int id;
     private String title;
     private String category;
     private String director;
@@ -6,20 +8,24 @@ public class DVD {
     private float cost;
 
     public DVD(String title) {
+        this.id = ++nbDigitalVideoDiscs;
         this.title = title;
     }
     public DVD(String category, String title, float cost) {
+        this.id = ++nbDigitalVideoDiscs;
         this.category = category;
         this.title = title;
         this.cost = cost;
     }
     public DVD(String director, String category, String title, float cost) {
+        this.id = ++nbDigitalVideoDiscs;
         this.director = director;
         this.category = category;
         this.title = title;
         this.cost = cost;
     }
     public DVD(String title, String category, String director, int length, float cost) {
+        this.id = ++nbDigitalVideoDiscs;
         this.title = title;
         this.category = category;
         this.director = director;
