@@ -19,6 +19,24 @@ public class Cart {
         }
     }
 
+    public void addDVDsToCart(List<DVD> discList) {
+        DVDsList.addAll(discList);
+
+        if (DVDsList.size() > MAX_NUMBERS_ORDERED) {
+            DVDsList.subList(0, MAX_NUMBERS_ORDERED);
+        }
+    }
+
+    public void addDVDsToCart(DVD disc1, DVD disc2) {
+        if (DVDsList.size() <= MAX_NUMBERS_ORDERED) {
+            DVDsList.add(disc1);
+        }
+
+        if (DVDsList.size() <= MAX_NUMBERS_ORDERED) {
+            DVDsList.add(disc2);
+        }
+    }
+
     public int removeDVDsFromCart(DVD disc) {
         for (int i = 0; i < DVDsList.size(); i++) {
             DVD item = DVDsList.get(i);
