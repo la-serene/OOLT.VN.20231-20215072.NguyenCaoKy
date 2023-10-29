@@ -1,0 +1,27 @@
+1. If you create a constructor method to build a DVD by title then create a constructor method to
+ build a DVD by category. Does JAVA allow you to do this?
+
+    No. The act of creating multiple constructor methods in OOP can be considered as the
+implementation of Overloading. While both methods should share the same name, they must differ in either
+the number of parameters or the type of parameters. Above example violates the second rule, which means that
+JAVA will not allow this.
+
+2. Is JAVA a Pass by Value or a Pass by Reference programming language?
+
+    JAVA is a Pass by Value programming language.
+
+3. After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two
+   objects still remain?
+
+   Because the above swap method only swaps the copy of jungleDVD and cinderellaDVD. Specifically, the copies of
+jungleDVD and cinderellaDVD are passed to the method and saved to local variables. Reassigning local variables in method
+only make them point to another objects. This breaks their relationship with the original objects, which reasons for
+that the title of original objects remain.
+
+4. After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is
+   the title of the JungleDVD changed?
+
+    While JAVA is Pass by Value language, in the case of changeTitle method, it is the copy of the
+reference to jungleDVD passed to the method and saved to the local variable jungleDVD. When internal
+state of the local variable gets changed, original jungleDVD is also changed because both of them
+point to the same object in memory, which resulted in the changed title.
