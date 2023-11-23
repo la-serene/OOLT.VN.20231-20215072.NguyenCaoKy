@@ -68,7 +68,7 @@ public class Cart {
 
     public void print() {
         for (int i = 0; i < this.DVDsList.size(); i++) {
-            System.out.printf("%d. %s%n", i + 1, this.DVDsList.get(i).toString());
+            System.out.printf("%d. %s", i + 1, this.DVDsList.get(i).toString());
         }
     }
 
