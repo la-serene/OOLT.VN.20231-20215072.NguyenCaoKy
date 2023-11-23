@@ -1,23 +1,17 @@
-package hust.soict.hedspi.test.cart;
+package hust.soict.hedspi.aims.store;
 
-import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.disc.DVD;
-
-public class CartTest {
+public class StoreTest {
     public static void main(String[] args) {
-        Cart cart = new Cart();
+        Store s = new Store();
 
         DVD dvd1 = new DVD("The Lion King", "Animation", "Rogers Alter", 87, 19.95f);
-        cart.addDVDsToCart(dvd1);
+        s.addDVDtoStore(dvd1);
 
         DVD dvd2 = new DVD("Inception", "Sci-Fi", "Christopher Nolan", 148, 24.99f);
-        cart.addDVDsToCart(dvd2);
+        s.addDVDtoStore(dvd2);
 
         DVD dvd3 = new DVD("Casablanca", "Drama", "Michael Curtiz", 102, 14.99f);
-        cart.addDVDsToCart(dvd3);
-
-        cart.print();
-        cart.searchDVD(3);
-        cart.searchDVD("Casablanca");
+        s.addDVDtoStore(dvd3);
     }
 }

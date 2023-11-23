@@ -12,8 +12,9 @@ public class Cart {
     private int DVDsQuantity = 0;
 
     public int addDVDsToCart(DVD disc) {
-        if (DVDsList.size() < MAX_NUMBERS_ORDERED) {
-            DVDsList.add(disc);
+        if (this.DVDsQuantity < MAX_NUMBERS_ORDERED) {
+            this.DVDsList.add(disc);
+            this.DVDsQuantity += 1;
             System.out.println("The disc has been added.");
 
             return 1;
@@ -25,31 +26,34 @@ public class Cart {
     }
 
     public void addDVDsToCart(List<DVD> discList) {
-        DVDsList.addAll(discList);
+        this.DVDsList.addAll(discList);
 
-        if (DVDsList.size() > MAX_NUMBERS_ORDERED) {
-            DVDsList.subList(0, MAX_NUMBERS_ORDERED);
+        if (this.DVDsQuantity > MAX_NUMBERS_ORDERED) {
+            this.DVDsList.subList(0, MAX_NUMBERS_ORDERED);
+            this.DVDsQuantity = MAX_NUMBERS_ORDERED;
         }
     }
 
 
 
     public void addDVDsToCart(DVD disc1, DVD disc2) {
-        if (DVDsList.size() <= MAX_NUMBERS_ORDERED) {
-            DVDsList.add(disc1);
+        if (this.DVDsQuantity <= MAX_NUMBERS_ORDERED) {
+            this.DVDsList.add(disc1);
+            this.DVDsQuantity += 1;
         }
 
-        if (DVDsList.size() <= MAX_NUMBERS_ORDERED) {
-            DVDsList.add(disc2);
+        if (this.DVDsQuantity <= MAX_NUMBERS_ORDERED) {
+            this.DVDsList.add(disc2);
+            this.DVDsQuantity += 1;
         }
     }
 
     public int removeDVDsFromCart(DVD disc) {
-        for (int i = 0; i < DVDsList.size(); i++) {
-            DVD item = DVDsList.get(i);
+        for (int i = 0; i < this.DVDsQuantity; i++) {
+            DVD item = this.DVDsList.get(i);
 
             if (item.equals(disc)) {
-                DVDsList.remove(i);
+                this.DVDsList.remove(i);
 
                 return 1;
             }
@@ -59,7 +63,7 @@ public class Cart {
 
     public float calculateCost() {
         float total_cost = 0;
-        for (DVD disc : DVDsList) {
+        for (DVD disc : this.DVDsList) {
             total_cost += disc.getCost();
         }
 
@@ -67,13 +71,13 @@ public class Cart {
     }
 
     public void print() {
-        for (int i = 0; i < this.DVDsList.size(); i++) {
-            System.out.printf("%d. %s%n", i + 1, this.DVDsList.get(i).toString());
+        for (int i = 0; i < this.DVDsQuantity; i++) {
+            System.out.printf("%d. %s", i + 1, this.DVDsList.get(i).toString());
         }
     }
 
-    public DVD searchDVDsByID(int id) {
-        for (int i = 0; i < this.DVDsList.size(); i++) {
+    public DVD searchDVD(int id) {
+        for (int i = 0; i < this.DVDsQuantity; i++) {
             if (id == this.DVDsList.get(i).getId()) {
                 System.out.printf("%d. %s", i + 1, this.DVDsList.get(i).toString());
                 return this.DVDsList.get(i);
@@ -83,10 +87,12 @@ public class Cart {
         return null;
     }
 
-    public DVD searchDVDsByTitle(String title) {
-        for (int i = 0; i < this.DVDsList.size(); i++) {
+    public DVD searchDVD(String title) {
+        for (int i = 0; i < this.DVDsQuantity; i++) {
+            String s = this.DVDsList.get(i).getTitle();
             if (this.DVDsList.get(i).isMatch(title)) {
                 System.out.printf("%d. %s", i + 1, this.DVDsList.get(i).toString());
+
                 return this.DVDsList.get(i);
             }
         }
