@@ -32,10 +32,16 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "feature/re-organize",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\BKA\nam ba\20231\OOP Lab\OOLT.VN.20231-20215072.NguyenCaoKy\Lab03\AimsProject" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -45,6 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700370978579</updated>
       <workItem from="1700370986103" duration="13000" />
+      <workItem from="1700730130908" duration="76000" />
     </task>
     <servers />
   </component>
