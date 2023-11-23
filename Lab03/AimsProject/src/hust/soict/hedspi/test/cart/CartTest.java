@@ -17,6 +17,7 @@ public class CartTest {
         cart.addDVDsToCart(dvd3);
 
         cart.print();
-        cart.searchDVD(4);
+        cart.searchDVD(3);
+        cart.searchDVD("Casablanca");
     }
 }
