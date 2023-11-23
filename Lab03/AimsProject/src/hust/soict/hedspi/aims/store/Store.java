@@ -8,7 +8,13 @@ import java.util.List;
 public class Store {
     List<DVD> itemsInStore = new ArrayList<>();
 
-    public void addDVD(DVD dvd) {
+    public void addDVDtoStore(DVD dvd) {
+        System.out.println("New DVD added!");
         this.itemsInStore.add(dvd);
+    }
+
+    public void removeDVDtoStore(DVD dvd) {
+        System.out.println("DVD successfully removed!");
+        this.itemsInStore.remove(dvd);
     }
 }
