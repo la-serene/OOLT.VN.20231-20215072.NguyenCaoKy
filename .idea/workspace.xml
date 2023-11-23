@@ -5,9 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="031e24ea-2a6a-4dde-b7cd-30ed61203346" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/hust.soict.hedspi.aims/cart.Cart/cart.Cart.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/hust.soict.hedspi.aims/disc/DigitalVideoDisc/DigitalVideoDisc.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/hust.soict.hedspi.aims/disc/disc.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/AimsProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/Design/class_diagram.asta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/Design/class_diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/ReadingAssignment/ReadingAssignment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/Requirements/use-case_diagram.asta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/Requirements/use-case_diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/aims/Aims.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/aims/cart/Cart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/aims/cart/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/aims/disc/DVD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/aims/disc/DVD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/aims/store/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/aims/store/Store.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/aims/store/StoreTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/aims/store/StoreTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/test/cart/CartTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/test/cart/CartTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/src/hust/soict/hedspi/test/disc/TestPassingParameter.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,23 +52,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;release/lab03&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/re-organize",
+    "git-widget-placeholder": "release/lab03",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,9 +65,8 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
->>>>>>> feature/re-organize
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="I:\BKA\nam ba\20231\OOP Lab\OOLT.VN.20231-20215072.NguyenCaoKy\Lab03\AimsProject" />
