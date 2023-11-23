@@ -1,3 +1,5 @@
+package hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+
 public class DVD {
     private static int nbDigitalVideoDiscs = 0;
     private int id;

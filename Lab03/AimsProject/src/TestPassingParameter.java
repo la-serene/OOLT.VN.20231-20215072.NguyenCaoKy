@@ -1,3 +1,5 @@
+import hust.soict.hedspi.aims.disc.DigitalVideoDisc.DVD;
+
 public class TestPassingParameter {
     public static void main(String[] args) {
         DVD jungleDVD = new DVD("Jungle");
