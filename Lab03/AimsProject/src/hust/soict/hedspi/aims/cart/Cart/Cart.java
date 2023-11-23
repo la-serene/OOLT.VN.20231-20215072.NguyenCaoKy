@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
-    private List<DVD> DVDsList = new ArrayList<>();
+    public List<DVD> DVDsList = new ArrayList<>();
     private int DVDsQuantity = 0;
 
     public int addDVDsToCart(DVD disc) {
@@ -30,6 +30,8 @@ public class Cart {
             DVDsList.subList(0, MAX_NUMBERS_ORDERED);
         }
     }
+
+
 
     public void addDVDsToCart(DVD disc1, DVD disc2) {
         if (DVDsList.size() <= MAX_NUMBERS_ORDERED) {
