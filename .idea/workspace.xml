@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="031e24ea-2a6a-4dde-b7cd-30ed61203346" name="Changes" comment="" />
+    <list default="true" id="031e24ea-2a6a-4dde-b7cd-30ed61203346" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/hust.soict.hedspi.aims/cart.Cart/cart.Cart.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/hust.soict.hedspi.aims/disc/DigitalVideoDisc/DigitalVideoDisc.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab03/AimsProject/hust.soict.hedspi.aims/disc/disc.iml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +36,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "feature/re-organize",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
