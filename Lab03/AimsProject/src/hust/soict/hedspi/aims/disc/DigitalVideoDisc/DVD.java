@@ -1,5 +1,10 @@
 package hust.soict.hedspi.aims.disc.DigitalVideoDisc;
 
+import hust.soict.hedspi.aims.cart.Cart.Cart;
+
+import javax.swing.*;
+import java.util.List;
+
 public class DVD {
     private static int nbDigitalVideoDiscs = 0;
     private int id;
@@ -34,6 +39,8 @@ public class DVD {
         this.length = length;
         this.cost = cost;
     }
+
+    public int getId() { return id; }
     public String getTitle() {
         return title;
     }
@@ -50,4 +57,34 @@ public class DVD {
         return cost;
     }
     public void setTitle(String title) {this.title = title;}
+
+    public String toString() {
+        return String.format("DVD - %s - %s - %s - %d: %f $%n", this.getTitle(), this.getCategory(), this.getDirector(), this.getLength(), this.getCost());
+    }
+
+    public boolean isMatch(String title) {
+        return this.title.equals(title);
+    }
+
+    public DVD searchDVDsByID(Cart cart, int id) {
+        for (int i = 0; i < cart.DVDsList.size(); i++) {
+            if (id == cart.DVDsList.get(i).getId()) {
+                System.out.printf("%d. %s", i + 1, cart.DVDsList.get(i).toString());
+                return cart.DVDsList.get(i);
+            }
+        }
+        JOptionPane.showMessageDialog(null, "No matching found!");
+        return null;
+    }
+
+    public DVD searchDVDsByTitle(Cart cart, String title) {
+        for (int i = 0; i < cart.DVDsList.size(); i++) {
+            if (cart.DVDsList.get(i).isMatch(title)) {
+                System.out.printf("%d. %s", i + 1, cart.DVDsList.get(i).toString());
+                return cart.DVDsList.get(i);
+            }
+        }
+        JOptionPane.showMessageDialog(null, "No matching found!");
+        return null;
+    }
 }
