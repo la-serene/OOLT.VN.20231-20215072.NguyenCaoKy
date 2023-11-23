@@ -1,7 +1,8 @@
-package hust.soict.hedspi.aims.cart.Cart;
+package hust.soict.hedspi.aims.cart;
 
-import hust.soict.hedspi.aims.disc.DigitalVideoDisc.DVD;
+import hust.soict.hedspi.aims.disc.DVD;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,5 +64,33 @@ public class Cart {
         }
 
         return total_cost;
+    }
+
+    public void print() {
+        for (int i = 0; i < this.DVDsList.size(); i++) {
+            System.out.printf("%d. %s%n", i + 1, this.DVDsList.get(i).toString());
+        }
+    }
+
+    public DVD searchDVDsByID(int id) {
+        for (int i = 0; i < this.DVDsList.size(); i++) {
+            if (id == this.DVDsList.get(i).getId()) {
+                System.out.printf("%d. %s", i + 1, this.DVDsList.get(i).toString());
+                return this.DVDsList.get(i);
+            }
+        }
+        JOptionPane.showMessageDialog(null, "No matching found!");
+        return null;
+    }
+
+    public DVD searchDVDsByTitle(String title) {
+        for (int i = 0; i < this.DVDsList.size(); i++) {
+            if (this.DVDsList.get(i).isMatch(title)) {
+                System.out.printf("%d. %s", i + 1, this.DVDsList.get(i).toString());
+                return this.DVDsList.get(i);
+            }
+        }
+        JOptionPane.showMessageDialog(null, "No matching found!");
+        return null;
     }
 }
