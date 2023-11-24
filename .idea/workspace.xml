@@ -35,6 +35,10 @@
     &quot;git-widget-placeholder&quot;: &quot;release/lab03&quot;,
 =======
     &quot;git-widget-placeholder&quot;: &quot;feature/re-organize&quot;,
+<<<<<<< HEAD
+>>>>>>> feature/re-organize
+=======
+    &quot;last_opened_file_path&quot;: &quot;I:/BKA/nam ba/20231/OOP Lab/OOLT.VN.20231-20215072.NguyenCaoKy&quot;,
 >>>>>>> feature/re-organize
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -47,6 +51,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\BKA\nam ba\20231\OOP Lab\OOLT.VN.20231-20215072.NguyenCaoKy" />
       <recent name="I:\BKA\nam ba\20231\OOP Lab\OOLT.VN.20231-20215072.NguyenCaoKy\Lab03\AimsProject" />
     </key>
   </component>
@@ -60,7 +65,17 @@
       <updated>1700370978579</updated>
       <workItem from="1700370986103" duration="13000" />
       <workItem from="1700730130908" duration="76000" />
+<<<<<<< HEAD
       <workItem from="1700741926028" duration="52000" />
+=======
+      <workItem from="1700828820043" duration="279000" />
+      <workItem from="1700829167386" duration="65000" />
+      <workItem from="1700829269362" duration="10000" />
+      <workItem from="1700829347592" duration="15000" />
+      <workItem from="1700829366092" duration="7000" />
+      <workItem from="1700833553821" duration="530000" />
+      <workItem from="1700835276154" duration="621000" />
+>>>>>>> feature/re-organize
     </task>
     <servers />
   </component>
