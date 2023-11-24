@@ -30,8 +30,14 @@ public class CompactDisc extends Disc{
     public int getLength() {
         int length = 0;
         for (Track track : tracks) {
-            length += track.getLength();
+            length += track.length();
         }
         return length;
+    }
+    public void play() {
+        System.out.println("Playing CD: " + this.getTitle());
+        for (Track track : tracks) {
+            track.play();
+        }
     }
 }

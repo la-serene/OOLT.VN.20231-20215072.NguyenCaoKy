@@ -16,4 +16,8 @@ public class DVD extends Disc {
     public boolean isMatch(String title) {
         return this.getTitle().equals(title);
     }
+    public void play() {
+        System.out.println("Playing DVD: " + this.getTitle());
+        System.out.println("DVD length: " + this.getLength());
+    }
 }
