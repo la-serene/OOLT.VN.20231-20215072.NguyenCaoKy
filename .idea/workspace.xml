@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="031e24ea-2a6a-4dde-b7cd-30ed61203346" name="Changes" comment="" />
+    <list default="true" id="031e24ea-2a6a-4dde-b7cd-30ed61203346" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/OtherProjects.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/lab01/lab01.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/lab02/lab02.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/lab03/lab03.zip" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +39,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feature/re-organize&quot;,
+    &quot;last_opened_file_path&quot;: &quot;I:/BKA/nam ba/20231/OOP Lab/OOLT.VN.20231-20215072.NguyenCaoKy&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -43,6 +51,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\BKA\nam ba\20231\OOP Lab\OOLT.VN.20231-20215072.NguyenCaoKy" />
       <recent name="I:\BKA\nam ba\20231\OOP Lab\OOLT.VN.20231-20215072.NguyenCaoKy\Lab03\AimsProject" />
     </key>
   </component>
@@ -56,6 +65,11 @@
       <updated>1700370978579</updated>
       <workItem from="1700370986103" duration="13000" />
       <workItem from="1700730130908" duration="76000" />
+      <workItem from="1700828820043" duration="279000" />
+      <workItem from="1700829167386" duration="65000" />
+      <workItem from="1700829269362" duration="10000" />
+      <workItem from="1700829347592" duration="15000" />
+      <workItem from="1700829366092" duration="7000" />
     </task>
     <servers />
   </component>
