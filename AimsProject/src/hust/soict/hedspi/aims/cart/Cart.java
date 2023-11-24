@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.cart;
 
-import hust.soict.hedspi.aims.disc.DVD;
+import hust.soict.hedspi.aims.media.DVD;
 
 import javax.swing.*;
 import java.util.ArrayList;

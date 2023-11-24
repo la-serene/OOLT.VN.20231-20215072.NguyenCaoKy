@@ -3,39 +3,12 @@ package hust.soict.hedspi.aims.media;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
-    private int id;
-    private String title;
-    private String category;
-    private float cost;
+public class Book extends Media {
     private final List<String> authors = new ArrayList<>();
     public Book() { }
-    public int getId() {
-        return id;
-    }
-    public String getTitle() {
-        return title;
-    }
-    public String getCategory() {
-        return category;
-    }
-    public float getCost() {
-        return cost;
-    }
+
     public List<String> getAuthors() {
         return authors;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public void setTitle(String title) {
-        this.title = title.trim();
-    }
-    public void setCategory(String category) {
-        this.category = category.trim();
-    }
-    public void setCost(float cost) {
-        this.cost = cost;
     }
     public void addAuthor(String authorName) {
         if (authors.contains(authorName)) {

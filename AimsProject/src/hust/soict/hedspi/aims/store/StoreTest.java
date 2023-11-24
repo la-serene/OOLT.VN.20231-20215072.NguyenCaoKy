@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.store;
 
-import hust.soict.hedspi.aims.disc.DVD;
+import hust.soict.hedspi.aims.media.DVD;
 public class StoreTest {
     public static void main(String[] args) {
         Store s = new Store();
