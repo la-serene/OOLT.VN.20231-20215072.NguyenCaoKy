@@ -4,6 +4,7 @@ public class DVD extends Disc {
     private static int nbDigitalVideoDiscs = 0;
     private String director;
     private int length;
+    public DVD() { super(); }
     public String getDirector() {
         return director;
     }

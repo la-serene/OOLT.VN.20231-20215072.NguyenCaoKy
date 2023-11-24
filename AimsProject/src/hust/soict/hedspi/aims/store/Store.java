@@ -1,10 +1,8 @@
 package hust.soict.hedspi.aims.store;
 
-import hust.soict.hedspi.aims.media.DVD;
 import hust.soict.hedspi.aims.media.Media;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Store {
     public ArrayList<Media> itemsInStore = new ArrayList<>();
