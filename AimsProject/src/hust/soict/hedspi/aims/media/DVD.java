@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.media;
 
-public class DVD extends Media {
+public class DVD extends Disc {
     private static int nbDigitalVideoDiscs = 0;
     private String director;
     private int length;
