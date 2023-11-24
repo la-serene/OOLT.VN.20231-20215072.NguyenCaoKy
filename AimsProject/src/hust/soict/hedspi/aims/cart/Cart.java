@@ -1,70 +1,34 @@
 package hust.soict.hedspi.aims.cart;
 
 import hust.soict.hedspi.aims.media.DVD;
+import hust.soict.hedspi.aims.media.Media;
 
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
-    public static final int MAX_NUMBERS_ORDERED = 20;
-    public List<DVD> DVDsList = new ArrayList<>();
-    private int DVDsQuantity = 0;
-
-    public int addDVDsToCart(DVD disc) {
-        if (this.DVDsQuantity < MAX_NUMBERS_ORDERED) {
-            this.DVDsList.add(disc);
-            this.DVDsQuantity += 1;
-            System.out.println("The disc has been added.");
-
-            return 1;
+    public ArrayList<Media> itemsOrdered = new ArrayList<>();
+    public void addMedia(Media media) {
+        if (itemsOrdered.contains(media)) {
+            System.out.println("Media already exists!");
         } else {
-            System.out.println("The cart is almost full.");
-
-            return 0;
+            itemsOrdered.add(media);
+            System.out.println("Media added!");
         }
     }
-
-    public void addDVDsToCart(List<DVD> discList) {
-        this.DVDsList.addAll(discList);
-
-        if (this.DVDsQuantity > MAX_NUMBERS_ORDERED) {
-            this.DVDsList.subList(0, MAX_NUMBERS_ORDERED);
-            this.DVDsQuantity = MAX_NUMBERS_ORDERED;
+    public void removeMedia(Media media) {
+        if (itemsOrdered.contains(media)) {
+            itemsOrdered.remove(media);
+            System.out.println("Media removed!");
+        } else {
+            System.out.println("Media not found!");
         }
     }
-
-
-
-    public void addDVDsToCart(DVD disc1, DVD disc2) {
-        if (this.DVDsQuantity <= MAX_NUMBERS_ORDERED) {
-            this.DVDsList.add(disc1);
-            this.DVDsQuantity += 1;
-        }
-
-        if (this.DVDsQuantity <= MAX_NUMBERS_ORDERED) {
-            this.DVDsList.add(disc2);
-            this.DVDsQuantity += 1;
-        }
-    }
-
-    public int removeDVDsFromCart(DVD disc) {
-        for (int i = 0; i < this.DVDsQuantity; i++) {
-            DVD item = this.DVDsList.get(i);
-
-            if (item.equals(disc)) {
-                this.DVDsList.remove(i);
-
-                return 1;
-            }
-        }
-        return 0;
-    }
-
     public float calculateCost() {
         float total_cost = 0;
-        for (DVD disc : this.DVDsList) {
-            total_cost += disc.getCost();
+        for (Media media : itemsOrdered) {
+            total_cost += media.getCost();
         }
 
         return total_cost;
