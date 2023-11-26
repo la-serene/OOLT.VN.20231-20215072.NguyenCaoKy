@@ -9,11 +9,11 @@ public class Disc extends Media implements Playable {
     public void play() {
 
     }
-    public void getLength(int length) {
-        this.length = length;
-    }
-    public int setLength() {
+    public int getLength() {
         return length;
+    }
+    public void setLength(int length) {
+        this.length = length;
     }
     public String getDirector() {
         return director;
