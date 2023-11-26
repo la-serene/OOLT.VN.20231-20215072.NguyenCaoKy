@@ -25,7 +25,12 @@ public class CompactDisc extends Disc{
         }
     }
     public String toString() {
-        return String.format("CD - %s - %s - %s - %s - %d: %.2f $%n", this.getTitle(), this.getCategory(), this.getDirector(), this.getArtist(), this.getLength(), this.getCost());
+        StringBuilder content = new StringBuilder(String.format("CD - %s - %s - %s - %s - %d: %.2f $%n", this.getTitle(), this.getCategory(), this.getDirector(), this.getArtist(), this.getLength(), this.getCost()));
+        for (Track track : tracks) {
+            content.append(track.toString());
+        }
+
+        return content.toString();
     }
     public String getArtist() {
         return artist;
