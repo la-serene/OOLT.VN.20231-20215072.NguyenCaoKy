@@ -26,8 +26,7 @@ public class Track implements Playable {
     }
     public void play() {
         if (this.getLength() > 0) {
-            System.out.println("Playing track: " + this.getTitle());
-            System.out.println("Track length: " + this.getLength());
+            System.out.println("Playing: " + this.toString());
         } else {
             JOptionPane.showMessageDialog(null, "Track cannot be displayed!", "Error", JOptionPane.ERROR_MESSAGE);
         }
