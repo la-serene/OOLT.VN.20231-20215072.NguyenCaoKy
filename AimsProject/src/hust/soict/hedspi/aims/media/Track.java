@@ -1,5 +1,7 @@
 package hust.soict.hedspi.aims.media;
 
+import javax.swing.*;
+
 public class Track implements Playable {
     private String title;
     private int length;
@@ -23,8 +25,12 @@ public class Track implements Playable {
         return String.format("Track - %s - %d%n", title, length);
     }
     public void play() {
-        System.out.println("Playing Track: " + title);
-        System.out.println("Track length: " + length);
+        if (this.getLength() > 0) {
+            System.out.println("Playing track: " + this.getTitle());
+            System.out.println("Track length: " + this.getLength());
+        } else {
+            JOptionPane.showMessageDialog(null, "Track cannot be displayed!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     public String getTitle() {
         return title;
