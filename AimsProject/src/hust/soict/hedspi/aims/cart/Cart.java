@@ -40,24 +40,25 @@ public class Cart {
         }
     }
 
-    public DVD searchDVD(int id) {
-        for (int i = 0; i < this.DVDsQuantity; i++) {
-            if (id == this.DVDsList.get(i).getId()) {
-                System.out.printf("%d. %s", i + 1, this.DVDsList.get(i).toString());
-                return this.DVDsList.get(i);
+    public Media searchDVD(int id) {
+        for (int i = 0; i < itemsOrdered.size(); i++) {
+            if (id == itemsOrdered.get(i).getId()) {
+                System.out.printf("%d. %s", i + 1, itemsOrdered.get(i).toString());
+                
+                return itemsOrdered.get(i);
             }
         }
         JOptionPane.showMessageDialog(null, "No matching found!");
         return null;
     }
 
-    public DVD searchDVD(String title) {
-        for (int i = 0; i < this.DVDsQuantity; i++) {
-            String s = this.DVDsList.get(i).getTitle();
-            if (this.DVDsList.get(i).isMatch(title)) {
-                System.out.printf("%d. %s", i + 1, this.DVDsList.get(i).toString());
+    public Media searchDVD(String title) {
+        for (int i = 0; i < itemsOrdered.size(); i++) {
+            String s = itemsOrdered.get(i).getTitle();
+            if (itemsOrdered.get(i).isMatch(title)) {
+                System.out.printf("%d. %s", i + 1, itemsOrdered.get(i).toString());
 
-                return this.DVDsList.get(i);
+                return itemsOrdered.get(i);
             }
         }
         JOptionPane.showMessageDialog(null, "No matching found!");
