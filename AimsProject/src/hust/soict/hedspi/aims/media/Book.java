@@ -9,10 +9,6 @@ public class Book extends Media {
     public Book() {
         super();
     }
-
-    public List<String> getAuthors() {
-        return authors;
-    }
     public void addAuthor(String authorName) {
         if (authors.contains(authorName)) {
             System.out.println("Author already exists!");
@@ -31,6 +27,9 @@ public class Book extends Media {
     }
     public String toString() {
         return String.format("Book - %s - %s - %s - %d%n", this.getTitle(), this.getCategory(), this.getAuthors(), this.getLength());
+    }
+    private List<String> getAuthors() {
+        return authors;
     }
     public int getLength() {
         return length;
