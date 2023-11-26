@@ -35,8 +35,8 @@ public class Cart {
     }
 
     public void print() {
-        for (int i = 0; i < this.DVDsQuantity; i++) {
-            System.out.printf("%d. %s", i + 1, this.DVDsList.get(i).toString());
+        for (int i = 0; i < itemsOrdered.size(); i++) {
+            System.out.printf("%d. %s", i + 1, itemsOrdered.get(i).toString());
         }
     }
 
