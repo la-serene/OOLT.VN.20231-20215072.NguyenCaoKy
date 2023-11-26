@@ -19,6 +19,9 @@ public class Track implements Playable {
 
         return false;
     }
+    public String toString() {
+        return String.format("Track - %s - %d", title, length);
+    }
     public void play() {
         System.out.println("Playing Track: " + title);
         System.out.println("Track length: " + length);
