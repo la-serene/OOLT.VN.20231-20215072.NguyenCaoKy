@@ -8,9 +8,6 @@ public class CompactDisc extends Disc{
     public CompactDisc() {
         super();
     }
-    public String getArtist() {
-        return artist;
-    }
     public void addTrack(Track track) {
         if (tracks.contains(track)) {
             System.out.println("Track already exists!");
@@ -26,6 +23,12 @@ public class CompactDisc extends Disc{
         } else {
             System.out.println("Track not found!");
         }
+    }
+    public String toString() {
+        return String.format("CD - %s - %s - %s - %s - %d: %.2f $%n", this.getTitle(), this.getCategory(), this.getDirector(), this.getArtist(), this.getLength(), this.getCost());
+    }
+    public String getArtist() {
+        return artist;
     }
     public int getLength() {
         int length = 0;
