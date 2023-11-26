@@ -32,6 +32,12 @@ public class CompactDisc extends Disc{
 
         return content.toString();
     }
+    public void play() {
+        System.out.println("Playing: " + this.toString());
+        for (Track track : tracks) {
+            track.play();
+        }
+    }
     public String getArtist() {
         return artist;
     }
@@ -41,11 +47,5 @@ public class CompactDisc extends Disc{
             length += track.getLength();
         }
         return length;
-    }
-    public void play() {
-        System.out.println("Playing: " + this.toString());
-        for (Track track : tracks) {
-            track.play();
-        }
     }
 }
