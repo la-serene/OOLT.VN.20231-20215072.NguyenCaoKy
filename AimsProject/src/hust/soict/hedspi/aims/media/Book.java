@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Book extends Media {
     private final List<String> authors = new ArrayList<>();
+    private int length;
     public Book() {
         super();
     }
@@ -27,5 +28,11 @@ public class Book extends Media {
         } else {
             System.out.println("Author does not exist!");
         }
+    }
+    public String toString() {
+        return String.format("Book - %s - %s - %s - %d%n", this.getTitle(), this.getCategory(), this.getAuthors(), this.getLength());
+    }
+    public int getLength() {
+        return length;
     }
 }
