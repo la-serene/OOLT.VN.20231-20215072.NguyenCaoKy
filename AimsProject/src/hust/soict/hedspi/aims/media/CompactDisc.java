@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CompactDisc extends Disc{
     private String artist;
-    private ArrayList<Track> tracks = new ArrayList<>();
+    private final ArrayList<Track> tracks = new ArrayList<>();
     public CompactDisc() {
         super();
     }
@@ -33,7 +33,7 @@ public class CompactDisc extends Disc{
     public int getLength() {
         int length = 0;
         for (Track track : tracks) {
-            length += track.length();
+            length += track.getLength();
         }
         return length;
     }
