@@ -12,7 +12,8 @@ public class DVD extends Disc {
     }
     public void play() {
         if (this.getLength() > 0) {
-            System.out.println("Playing: " + this.toString());
+            System.out.println("Playing DVD: " + this.getTitle());
+            System.out.println("DVD length: " + this.getLength());
         } else {
             JOptionPane.showMessageDialog(null, "DVD cannot be displayed!", "Error", JOptionPane.ERROR_MESSAGE);
         }
