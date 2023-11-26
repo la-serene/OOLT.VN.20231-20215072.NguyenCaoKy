@@ -1,8 +1,8 @@
 package hust.soict.hedspi.aims.media;
 
 public class Track implements Playable {
-    private final String title;
-    private final int length;
+    private String title;
+    private int length;
     public Track(String title, int length) {
         if (title.isBlank()) {
             throw new IllegalArgumentException("Title cannot be blank!");
@@ -22,5 +22,21 @@ public class Track implements Playable {
     public void play() {
         System.out.println("Playing Track: " + title);
         System.out.println("Track length: " + length);
+    }
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        if (title.isBlank()) {
+            throw new IllegalArgumentException("Title cannot be blank!");
+        } else this.title = title;
+    }
+    public int getLength() {
+        return length;
+    }
+    public void setLength(int length) {
+        if (length <= 0) {
+            throw new IllegalArgumentException("Length must be positive!");
+        } else this.length = length;
     }
 }
