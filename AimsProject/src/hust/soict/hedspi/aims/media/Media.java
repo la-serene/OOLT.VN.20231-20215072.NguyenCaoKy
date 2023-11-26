@@ -5,13 +5,18 @@ public abstract class Media {
     private String title;
     private String category;
     private float cost;
-    public Media() { }
+
+    public Media() {
+    }
+
     public boolean equals(Object o) {
         if (o instanceof Media media)
             return title.equals(media.title);
 
         return false;
     }
+
+    public int getId() { return id; }
 
     public String getTitle() {
         return title;
