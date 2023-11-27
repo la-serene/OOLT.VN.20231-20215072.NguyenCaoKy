@@ -25,6 +25,12 @@ public class Aims {
         myDVD.setTitle("Inception");
         myCD.setTitle("Abbey Road");
 
+        myDVD.setLength(100);
+        myCD.setLength(60);
+
+        myDVD.setCost(20);
+        myCD.setCost(20);
+
         store.addMedia(myBook);
         store.addMedia(myCD);
         store.addMedia(myDVD);
@@ -64,7 +70,6 @@ public class Aims {
                                 option = scanner.nextInt();
                                 if (option == 1) {
                                     cart.addMedia(media);
-                                    System.out.println("Media added to cart!");
                                     System.out.println();
                                 } else if (option == 2) {
                                     if (media instanceof DVD || media instanceof CompactDisc) {
@@ -115,6 +120,7 @@ public class Aims {
                             }
                         }
                     } else if (option == 4) {
+                        cart.print();
                         cartMenu();
                         option = scanner.nextInt();
                         scanner.nextLine();
@@ -246,6 +252,7 @@ public class Aims {
                 }
 
                 case 3 -> {
+                    cart.print();
                     cartMenu();
                     option = scanner.nextInt();
                     scanner.nextLine();
@@ -410,8 +417,8 @@ public class Aims {
     public static void filteringOptions() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
-        System.out.println("1. ID");
-        System.out.println("2. Title");
+        System.out.println("1. Title");
+        System.out.println("2. ID");
         System.out.println("0. Back");
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2");
