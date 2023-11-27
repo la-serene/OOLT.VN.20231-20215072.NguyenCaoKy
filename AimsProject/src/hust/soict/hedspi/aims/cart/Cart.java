@@ -3,6 +3,7 @@ package hust.soict.hedspi.aims.cart;
 import hust.soict.hedspi.aims.media.Media;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cart {
     public ArrayList<Media> itemsOrdered = new ArrayList<>();
@@ -30,10 +31,30 @@ public class Cart {
 
         return total_cost;
     }
-
     public void print() {
         for (int i = 0; i < itemsOrdered.size(); i++) {
             System.out.printf("%d. %s", i + 1, itemsOrdered.get(i).toString());
         }
+    }
+    public List<Media> filterMedia(String title) {
+        List<Media> filteredMedia = new ArrayList<>();
+        for (Media media : itemsOrdered) {
+            if (media.getTitle().equals(title)) {
+                filteredMedia.add(media);
+            }
+        }
+
+        return filteredMedia;
+    }
+
+    public List<Media> filterMedia(int id) {
+        List<Media> filteredMedia = new ArrayList<>();
+        for (Media media : itemsOrdered) {
+            if (media.getId() == id) {
+                filteredMedia.add(media);
+            }
+        }
+
+        return filteredMedia;
     }
 }
