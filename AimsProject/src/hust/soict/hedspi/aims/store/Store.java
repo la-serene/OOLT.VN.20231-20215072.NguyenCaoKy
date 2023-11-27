@@ -31,4 +31,8 @@ public class Store {
 
         return null;
     }
+    public void print() {
+        for (int i = 0; i < itemsInStore.size(); i++)
+            System.out.printf("%d. %s%n", i + 1, itemsInStore.get(i).toString());
+    }
 }
