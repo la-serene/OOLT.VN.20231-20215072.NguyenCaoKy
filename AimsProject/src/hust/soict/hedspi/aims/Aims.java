@@ -2,6 +2,8 @@ package hust.soict.hedspi.aims;
 
 import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.media.Book;
+import hust.soict.hedspi.aims.media.CompactDisc;
+import hust.soict.hedspi.aims.media.DVD;
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.store.Store;
 
@@ -36,8 +38,7 @@ public class Aims {
                         if (media == null) {
                             JOptionPane.showMessageDialog(null, "No media found!");
                             break;
-                        }
-                        else System.out.println(media);
+                        } else System.out.println(media);
 
                         if (media instanceof Book) bookDetailsMenu();
                         else discDetailsMenu();
@@ -93,6 +94,63 @@ public class Aims {
             // Update store
             case 2 -> {
                 updateMenu();
+                option = scanner.nextInt();
+
+                switch (option) {
+                    // Add media to store
+                    case 1 -> {
+                        mediaTypeMenu();
+
+                        option = scanner.nextInt();
+                        switch (option) {
+                            case 1 -> {
+                                scanner.nextLine();
+                                System.out.println("Enter title");
+                                String title = scanner.nextLine();
+
+                                if (title.length() == 0) break;
+                                Book book = new Book();
+                                book.setTitle(title);
+                                JOptionPane.showMessageDialog(null, "Media added successfully!");
+                            }
+
+                            case 2 -> {
+                                scanner.nextLine();
+                                System.out.println("Enter title");
+                                String title = scanner.nextLine();
+
+                                if (title.length() == 0) break;
+                                CompactDisc cd = new CompactDisc();
+                                cd.setTitle(title);
+                                JOptionPane.showMessageDialog(null, "Media added successfully!");
+                            }
+
+                            case 3 -> {
+                                scanner.nextLine();
+                                System.out.println("Enter title");
+                                String title = scanner.nextLine();
+
+                                if (title.length() == 0) break;
+                                DVD dvd = new DVD();
+                                dvd.setTitle(title);
+                                JOptionPane.showMessageDialog(null, "Media added successfully!");
+                            }
+                        }
+                    }
+
+                    // Remove media from store
+                    case 2 -> {
+                        scanner.nextLine();
+                        System.out.println("Enter title");
+                        String title = scanner.nextLine();
+
+                        Media media = store.searchMedia(title);
+                        store.removeMedia(media);
+                    }
+
+                    default -> {
+                    }
+                }
             }
 
             // See current cart
@@ -104,6 +162,7 @@ public class Aims {
             }
         }
     }
+
     public static void showMenu() {
         System.out.println("AIMS: ");
         System.out.println("--------------------------------");
@@ -114,6 +173,7 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3");
     }
+
     public static void storeMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -125,6 +185,7 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3-4");
     }
+
     public static void bookDetailsMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -133,6 +194,7 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1");
     }
+
     public static void discDetailsMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -142,6 +204,7 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2");
     }
+
     public static void cartMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -154,6 +217,7 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3-4-5");
     }
+
     public static void updateMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -162,5 +226,16 @@ public class Aims {
         System.out.println("0. Back");
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2");
+    }
+
+    public static void mediaTypeMenu() {
+        System.out.println("Options: ");
+        System.out.println("--------------------------------");
+        System.out.println("1. Book");
+        System.out.println("2. Compact Disc");
+        System.out.println("3. Digital Video Disc");
+        System.out.println("0. Back");
+        System.out.println("--------------------------------");
+        System.out.println("Please choose a number: 0-1-2-3");
     }
 }
