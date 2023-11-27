@@ -1,13 +1,10 @@
 package hust.soict.hedspi.aims.media;
 
-public class Disc extends Media implements Playable {
+public class Disc extends Media {
     private int length;
     private String director;
     public Disc() {
         super();
-    }
-    public void play() {
-
     }
     public int getLength() {
         return length;
