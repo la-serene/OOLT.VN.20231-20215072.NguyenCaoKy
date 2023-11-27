@@ -8,6 +8,7 @@ import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.store.Store;
 
 import javax.swing.*;
+import java.util.List;
 import java.util.Scanner;
 
 public class Aims {
@@ -22,7 +23,6 @@ public class Aims {
         // Setting titles using the setTitle method
         myBook.setTitle("The Great Gatsby");
         myDVD.setTitle("Inception");
-        myDVD.setLength(200);
         myCD.setTitle("Abbey Road");
 
         store.addMedia(myBook);
@@ -34,165 +34,222 @@ public class Aims {
         boolean loop = true;
 
         while (loop) {
-            System.out.println();
             showMenu();
             option = scanner.nextInt();
 
             switch (option) {
-                // View store
                 case 1 -> {
-                    System.out.println();
-                    for (int i = 0; i < store.itemsInStore.size(); i++)
+                    for (int i = 0; i < store.itemsInStore.size(); i++) {
                         System.out.printf("%d. %s%n", i + 1, store.itemsInStore.get(i).getTitle());
-
+                    }
                     System.out.println();
+
                     storeMenu();
                     option = scanner.nextInt();
+                    scanner.nextLine();
 
-                    switch (option) {
-                        // See a media's details
-                        case 1 -> {
-                            scanner.nextLine();
-                            System.out.println("Enter the title");
-                            String title = scanner.nextLine();
+                    if (option == 1) {
+                        System.out.println("Enter media title: ");
+                        String title = scanner.nextLine();
 
-                            if (title.length() == 0) break;
+                        if (title.length() != 0) {
                             Media media = store.searchMedia(title);
-                            if (media == null) {
-                                JOptionPane.showMessageDialog(null, "No media found!");
-                                break;
-                            } else System.out.println(media);
+                            if (media != null) {
+                                System.out.println(media);
 
-                            if (media instanceof Book) bookDetailsMenu();
-                            else discDetailsMenu();
+                                if (media instanceof DVD || media instanceof CompactDisc) {
+                                    discDetailsMenu();
+                                } else bookDetailsMenu();
 
-                            option = scanner.nextInt();
-                            switch (option) {
-                                // Add to cart
-                                case 1 -> cart.addMedia(media);
+                                option = scanner.nextInt();
+                                if (option == 1) {
+                                    cart.addMedia(media);
+                                    System.out.println("Media added to cart!");
+                                    System.out.println();
+                                } else if (option == 2) {
+                                    if (media instanceof DVD || media instanceof CompactDisc) {
+                                        media.play();
+                                    } else {
+                                        System.out.println();
+                                    }
+                                }
 
-                                // Play
-                                case 2 -> media.play();
-                                default -> {
+                            } else {
+                                System.out.println("Media not found!");
+                                System.out.println();
+                            }
+                        }
+                    } else if (option == 2) {
+                        System.out.println("Enter media title: ");
+                        String title = scanner.nextLine();
 
+                        if (title.length() != 0) {
+                            Media media = store.searchMedia(title);
+                            if (media != null) {
+                                cart.addMedia(media);
+
+                                if (media instanceof DVD) {
+                                    int count = 0;
+
+                                    for (Media m : cart.itemsOrdered) {
+                                        if (m instanceof DVD) {
+                                            count++;
+                                        }
+                                    }
+
+                                    System.out.printf("There are %d DVDs in cart%n", count);
+                                    System.out.println();
                                 }
                             }
                         }
+                    } else if (option == 3) {
+                        System.out.println("Enter media title: ");
+                        String title = scanner.nextLine();
 
-                        // Add a media to cart
-                        case 2 -> {
-                            store.print();
-                            scanner.nextLine();
-                            System.out.println("Enter the title");
-                            String title = scanner.nextLine();
-
-                            if (title.length() == 0) break;
+                        if (title.length() != 0) {
                             Media media = store.searchMedia(title);
-                            if (media == null) {
-                                JOptionPane.showMessageDialog(null, "No media found!");
-                            } else cart.addMedia(media);
-                        }
-
-                        // Play a media
-                        case 3 -> {
-                            scanner.nextLine();
-                            System.out.println("Enter the title");
-                            String title = scanner.nextLine();
-
-                            if (title.length() == 0) break;
-                            Media media = store.searchMedia(title);
-                            if (media == null) {
-                                JOptionPane.showMessageDialog(null, "No media found!");
-                            } else media.play();
-                        }
-
-                        // See current cart
-                        case 4 -> {
-                            System.out.println();
-                            cartMenu();
-                        }
-
-                        default -> {
-
+                            if ((media instanceof CompactDisc || media instanceof DVD)) {
+                                media.play();
+                            } else {
+                                System.out.println("Media not playable!");
+                            }
                         }
                     }
                 }
 
-                // Update store
                 case 2 -> {
-                    System.out.println();
                     updateMenu();
                     option = scanner.nextInt();
+                    scanner.nextLine();
 
-                    switch (option) {
-                        // Add media to store
-                        case 1 -> {
-                            System.out.println();
-                            mediaTypeMenu();
+                    if (option == 1) {
+                        mediaTypeMenu();
+                        option = scanner.nextInt();
+                        scanner.nextLine();
 
-                            option = scanner.nextInt();
-                            switch (option) {
-                                case 1 -> {
-                                    scanner.nextLine();
-                                    System.out.println("Enter title");
-                                    System.out.println("Enter the title");
-                                    String title = scanner.nextLine();
-
-                                    if (title.length() == 0) break;
-                                    Book book = new Book();
-                                    book.setTitle(title);
-                                    JOptionPane.showMessageDialog(null, "Media added successfully!");
-                                }
-
-                                case 2 -> {
-                                    scanner.nextLine();
-                                    System.out.println("Enter title");
-                                    System.out.println("Enter the title");
-                                    String title = scanner.nextLine();
-
-                                    if (title.length() == 0) break;
-                                    CompactDisc cd = new CompactDisc();
-                                    cd.setTitle(title);
-                                    JOptionPane.showMessageDialog(null, "Media added successfully!");
-                                }
-
-                                case 3 -> {
-                                    scanner.nextLine();
-                                    System.out.println("Enter title");
-                                    System.out.println("Enter the title");
-                                    String title = scanner.nextLine();
-
-                                    if (title.length() == 0) break;
-                                    DVD dvd = new DVD();
-                                    dvd.setTitle(title);
-                                    JOptionPane.showMessageDialog(null, "Media added successfully!");
-                                }
-                            }
-                        }
-
-                        // Remove media from store
-                        case 2 -> {
-                            scanner.nextLine();
-                            System.out.println("Enter title");
-                            System.out.println("Enter the title");
+                        if (option == 1) {
+                            Book book = new Book();
+                            System.out.println("Enter book title: ");
                             String title = scanner.nextLine();
+                            book.setTitle(title);
 
-                            Media media = store.searchMedia(title);
-                            store.removeMedia(media);
+                            store.addMedia(book);
+                            System.out.println();
+                        } else if (option == 2) {
+                            CompactDisc cd = new CompactDisc();
+                            System.out.println("Enter CD title: ");
+                            String title = scanner.nextLine();
+                            cd.setTitle(title);
+
+                            store.addMedia(cd);
+                            System.out.println();
+                        } else if (option == 3) {
+                            DVD dvd = new DVD();
+                            System.out.println("Enter DVD title: ");
+                            String title = scanner.nextLine();
+                            dvd.setTitle(title);
+
+                            store.addMedia(dvd);
+                            System.out.println();
                         }
+                    } else if (option == 2) {
+                        System.out.println("Enter media title: ");
+                        String title = scanner.nextLine();
 
-                        default -> {
+                        if (title.length() != 0) {
+                            Media media = store.searchMedia(title);
+                            if (media != null) {
+                                store.removeMedia(media);
+                                System.out.println();
+                            } else {
+                                System.out.println("Media not found!");
+                                System.out.println();
+                            }
                         }
                     }
                 }
 
-                // See current cart
                 case 3 -> {
-                    System.out.println();
                     cartMenu();
+                    option = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if (option == 1) {
+                        filteringOptions();
+                        option = scanner.nextInt();
+                        scanner.nextLine();
+
+                        if (option == 1) {
+                            String title = scanner.nextLine();
+                            if (title.length() != 0) {
+                                List<Media> filteredList = cart.filterMedia(title);
+
+                                if (filteredList.size() != 0) {
+                                    for (Media media : filteredList) {
+                                        System.out.println(media);
+                                    }
+                                } else {
+                                    System.out.println("Media not found!");
+                                }
+                            }
+                        }
+                        else if (option == 2) {
+                            int id = scanner.nextInt();
+                            List<Media> filteredList = cart.filterMedia(id);
+
+                            if (filteredList.size() != 0) {
+                                for (Media media : filteredList) {
+                                    System.out.println(media);
+                                }
+                            } else {
+                                System.out.println("Media not found!");
+                            }
+                        }
+                    }
+                    else if (option == 2) {
+                        sortingOptions();
+                        option = scanner.nextInt();
+                        scanner.nextLine();
+
+                        if (option == 1) {
+                            cart.itemsOrdered.sort(Media.COMPARE_BY_TITLE_COST);
+                        } else if (option == 2) {
+                            cart.itemsOrdered.sort(Media.COMPARE_BY_COST_TITLE);
+                        }
+
+                        cart.print();
+                    }
+                    else if (option == 3) {
+                        String title = scanner.nextLine();
+
+                        if (title.length() != 0) {
+                            Media media = cart.searchMedia(title);
+                            if (media != null) {
+                                cart.removeMedia(media);
+                            }
+                        }
+                    }
+                    else if (option == 4) {
+                        String title = scanner.nextLine();
+
+                        if (title.length() != 0) {
+                            Media media = cart.searchMedia(title);
+                            if (media instanceof DVD || media instanceof CompactDisc) {
+                                media.play();
+                            }
+                        }
+                    }
+                    else if (option == 5) {
+                        JOptionPane.showMessageDialog(null, "An order is created!");
+                        for (Media media : cart.itemsOrdered) {
+                            cart.itemsOrdered.remove(media);
+                        }
+                    }
                 }
 
-                case 0 -> loop = false;
+                case 0 -> {
+                    loop = false;
+                }
 
                 default -> {
                 }
@@ -274,5 +331,25 @@ public class Aims {
         System.out.println("0. Back");
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3");
+    }
+
+    public static void filteringOptions() {
+        System.out.println("Options: ");
+        System.out.println("--------------------------------");
+        System.out.println("1. ID");
+        System.out.println("2. Title");
+        System.out.println("0. Back");
+        System.out.println("--------------------------------");
+        System.out.println("Please choose a number: 0-1-2");
+    }
+
+    public static void sortingOptions() {
+        System.out.println("Options: ");
+        System.out.println("--------------------------------");
+        System.out.println("1. Title");
+        System.out.println("2. Cost");
+        System.out.println("0. Back");
+        System.out.println("--------------------------------");
+        System.out.println("Please choose a number: 0-1-2");
     }
 }
