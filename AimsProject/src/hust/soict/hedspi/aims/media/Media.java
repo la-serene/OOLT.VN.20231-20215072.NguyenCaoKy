@@ -36,4 +36,9 @@ public abstract class Media implements Playable {
     public float getCost() {
         return cost;
     }
+    public void setCost(float cost) {
+        if (cost < 0) {
+            throw new IllegalArgumentException("Cost must be positive!");
+        } else this.cost = cost;
+    }
 }
