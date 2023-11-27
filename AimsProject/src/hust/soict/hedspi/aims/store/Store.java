@@ -23,8 +23,11 @@ public class Store {
         }
     }
     public Media searchMedia(String title) {
-        for (Media m : itemsInStore)
-            if (m.getTitle().equals(title)) return m;
+        if (title.length() == 0) return null;
+        else {
+            for (Media m : itemsInStore)
+                if (m.getTitle().equals(title)) return m;
+        }
 
         return null;
     }
