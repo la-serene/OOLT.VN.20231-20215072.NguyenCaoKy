@@ -1,13 +1,14 @@
 package hust.soict.hedspi.aims.media;
 
+import java.util.Comparator;
+
 public abstract class Media implements Playable {
     private int id;
     private String title;
     private String category;
     private float cost;
 
-    public Media() {
-    }
+    public Media() { super(); }
 
     public boolean equals(Object o) {
         if (o instanceof Media media)
@@ -16,7 +17,13 @@ public abstract class Media implements Playable {
         return false;
     }
     public void play() {}
-    public int getId() { return id; }
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = Comparator.comparing(Media::getTitle)
+            .thenComparing(Media::getCost);
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = Comparator.comparing(Media::getCost)
+            .thenComparing(Media::getTitle);
+    public int getId() {
+        return id;
+    }
     public String getTitle() {
         return title;
     }
