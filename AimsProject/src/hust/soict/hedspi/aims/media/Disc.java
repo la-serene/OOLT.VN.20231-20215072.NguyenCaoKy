@@ -1,7 +1,7 @@
 package hust.soict.hedspi.aims.media;
 
 public class Disc extends Media {
-    private int length;
+    private int length = 0;
     private String director;
     public Disc() {
         super();
