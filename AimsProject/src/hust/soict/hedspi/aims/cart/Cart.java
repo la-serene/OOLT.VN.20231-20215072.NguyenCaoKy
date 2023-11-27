@@ -23,6 +23,12 @@ public class Cart {
             System.out.println("Media not found!");
         }
     }
+    public Media searchMedia(String title) {
+        for (Media media : itemsOrdered)
+            if (media.getTitle().equals(title)) return media;
+
+        return null;
+    }
     public float calculateCost() {
         float total_cost = 0;
         for (Media media : itemsOrdered) {
