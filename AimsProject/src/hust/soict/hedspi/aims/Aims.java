@@ -1,9 +1,11 @@
 package hust.soict.hedspi.aims;
 
 import hust.soict.hedspi.aims.cart.Cart;
+import hust.soict.hedspi.aims.media.Book;
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.store.Store;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Aims {
@@ -14,7 +16,7 @@ public class Aims {
         showMenu();
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
-        System.out.println(option);
+        System.out.println();
 
         switch (option) {
             case 1 -> {
@@ -25,9 +27,31 @@ public class Aims {
 
                 switch (option) {
                     case 1 -> {
+                        scanner.nextLine();
                         String title = scanner.nextLine();
                         Media media = store.searchMedia(title);
-                        System.out.println(media.toString());
+
+                        if (media == null) {
+                            JOptionPane.showMessageDialog(null, "No media found!");
+                            break;
+                        }
+                        else System.out.println(media.toString());
+
+                        if (media instanceof Book) bookDetailsMenu();
+                        else discDetailsMenu();
+
+                        option = scanner.nextInt();
+                        switch (option) {
+                            case 1 -> {
+                                cart.addMedia(media);
+                                break;
+                            }
+
+                            case 2 -> {
+                                media.play();
+                            }
+                        }
+
                     }
 
                     case 2 -> {
@@ -71,7 +95,16 @@ public class Aims {
         System.out.println("Please choose a number: 0-1-2-3-4");
     }
 
-    public static void mediaDetailsMenu() {
+    public static void bookDetailsMenu() {
+        System.out.println("Options: ");
+        System.out.println("--------------------------------");
+        System.out.println("1. Add to cart");
+        System.out.println("0. Back");
+        System.out.println("--------------------------------");
+        System.out.println("Please choose a number: 0-1");
+    }
+
+    public static void discDetailsMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
         System.out.println("1. Add to cart");
