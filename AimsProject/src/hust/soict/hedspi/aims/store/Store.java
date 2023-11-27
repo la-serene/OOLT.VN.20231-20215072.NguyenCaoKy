@@ -25,8 +25,8 @@ public class Store {
     public Media searchMedia(String title) {
         if (title.length() == 0) return null;
         else {
-            for (Media m : itemsInStore)
-                if (m.getTitle().equals(title)) return m;
+            for (Media media : itemsInStore)
+                if (media.getTitle().equals(title)) return media;
         }
 
         return null;
