@@ -15,23 +15,17 @@ public abstract class Media implements Playable {
 
         return false;
     }
-
-    public void play() {};
-
+    public void play() {}
     public int getId() { return id; }
-
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
-
     public String getCategory() {
         return category;
     }
-
     public float getCost() {
         return cost;
     }
