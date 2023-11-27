@@ -19,13 +19,14 @@ public class Aims {
         System.out.println();
 
         switch (option) {
+            // View store
             case 1 -> {
-                for (int i = 0; i < store.itemsInStore.size(); i++)
-                    System.out.printf("%d. %s%n", i + 1, store.itemsInStore.get(i).toString());
+                store.print();
                 storeMenu();
                 option = scanner.nextInt();
 
                 switch (option) {
+                    // See a media's details
                     case 1 -> {
                         scanner.nextLine();
                         String title = scanner.nextLine();
@@ -35,27 +36,34 @@ public class Aims {
                             JOptionPane.showMessageDialog(null, "No media found!");
                             break;
                         }
-                        else System.out.println(media.toString());
+                        else System.out.println(media);
 
                         if (media instanceof Book) bookDetailsMenu();
                         else discDetailsMenu();
 
                         option = scanner.nextInt();
                         switch (option) {
-                            case 1 -> {
-                                cart.addMedia(media);
-                                break;
-                            }
+                            // Add to cart
+                            case 1 -> cart.addMedia(media);
 
-                            case 2 -> {
-                                media.play();
+                            // Play
+                            case 2 -> media.play();
+                            default -> {
+
                             }
                         }
-
                     }
 
+                    // Add a media to cart
                     case 2 -> {
+                        store.print();
+                        scanner.nextLine();
+                        String title = scanner.nextLine();
 
+                        Media media = store.searchMedia(title);
+                        if (media == null) {
+                            JOptionPane.showMessageDialog(null, "No media found!");
+                        } else cart.addMedia(media);
                     }
 
                     default -> {
