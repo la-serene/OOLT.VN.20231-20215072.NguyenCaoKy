@@ -26,7 +26,7 @@ public class Book extends Media {
         }
     }
     public String toString() {
-        return String.format("Book - %s - %s - %s - %d%n", this.getTitle(), this.getCategory(), this.getAuthors(), this.getLength());
+        return String.format("Book - %s - %s - %s - %d: %.2f%n", this.getTitle(), this.getCategory(), this.getAuthors(), this.getLength(), this.getCost());
     }
     private List<String> getAuthors() {
         return authors;
