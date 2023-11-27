@@ -22,7 +22,7 @@ public class Track implements Playable {
         return false;
     }
     public String toString() {
-        return String.format("Track - %s - %d%n", title, length);
+        return String.format("Track - %s - %d", title, length);
     }
     public void play() {
         if (this.getLength() > 0) {
