@@ -22,4 +22,10 @@ public class Store {
             System.out.println("Media not found!");
         }
     }
+    public Media searchMedia(String title) {
+        for (Media m : itemsInStore)
+            if (m.getTitle().equals(title)) return m;
+
+        return null;
+    }
 }
