@@ -1,6 +1,6 @@
 package hust.soict.hedspi.aims.media;
 
-public abstract class Media {
+public abstract class Media implements Playable {
     private int id;
     private String title;
     private String category;
@@ -15,6 +15,8 @@ public abstract class Media {
 
         return false;
     }
+
+    public void play() {};
 
     public int getId() { return id; }
 
