@@ -30,8 +30,9 @@ public class Aims {
                     case 1 -> {
                         scanner.nextLine();
                         String title = scanner.nextLine();
-                        Media media = store.searchMedia(title);
 
+                        if (title.length() == 0) break;
+                        Media media = store.searchMedia(title);
                         if (media == null) {
                             JOptionPane.showMessageDialog(null, "No media found!");
                             break;
@@ -60,10 +61,28 @@ public class Aims {
                         scanner.nextLine();
                         String title = scanner.nextLine();
 
+                        if (title.length() == 0) break;
                         Media media = store.searchMedia(title);
                         if (media == null) {
                             JOptionPane.showMessageDialog(null, "No media found!");
                         } else cart.addMedia(media);
+                    }
+
+                    // Play a media
+                    case 3 -> {
+                        scanner.nextLine();
+                        String title = scanner.nextLine();
+
+                        if (title.length() == 0) break;
+                        Media media = store.searchMedia(title);
+                        if (media == null) {
+                            JOptionPane.showMessageDialog(null, "No media found!");
+                        } else media.play();
+                    }
+
+                    // See current cart
+                    case 4 -> {
+                        cartMenu();
                     }
 
                     default -> {
@@ -71,15 +90,20 @@ public class Aims {
                 }
             }
 
+            // Update store
             case 2 -> {
+                updateMenu();
+            }
 
+            // See current cart
+            case 3 -> {
+                cartMenu();
             }
 
             default -> {
             }
         }
     }
-
     public static void showMenu() {
         System.out.println("AIMS: ");
         System.out.println("--------------------------------");
@@ -90,7 +114,6 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3");
     }
-
     public static void storeMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -102,7 +125,6 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3-4");
     }
-
     public static void bookDetailsMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -111,7 +133,6 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1");
     }
-
     public static void discDetailsMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -121,7 +142,6 @@ public class Aims {
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2");
     }
-
     public static void cartMenu() {
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -133,5 +153,14 @@ public class Aims {
         System.out.println("0. Back");
         System.out.println("--------------------------------");
         System.out.println("Please choose a number: 0-1-2-3-4-5");
+    }
+    public static void updateMenu() {
+        System.out.println("Options: ");
+        System.out.println("--------------------------------");
+        System.out.println("1. Add media");
+        System.out.println("2. Remove media");
+        System.out.println("0. Back");
+        System.out.println("--------------------------------");
+        System.out.println("Please choose a number: 0-1-2");
     }
 }
