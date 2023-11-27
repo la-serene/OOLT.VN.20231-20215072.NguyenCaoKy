@@ -114,6 +114,82 @@ public class Aims {
                                 System.out.println("Media not playable!");
                             }
                         }
+                    } else if (option == 4) {
+                        cartMenu();
+                        option = scanner.nextInt();
+                        scanner.nextLine();
+
+                        if (option == 1) {
+                            filteringOptions();
+                            option = scanner.nextInt();
+                            scanner.nextLine();
+
+                            if (option == 1) {
+                                String title = scanner.nextLine();
+                                if (title.length() != 0) {
+                                    List<Media> filteredList = cart.filterMedia(title);
+
+                                    if (filteredList.size() != 0) {
+                                        for (Media media : filteredList) {
+                                            System.out.println(media);
+                                        }
+                                    } else {
+                                        System.out.println("Media not found!");
+                                    }
+                                }
+                            }
+                            else if (option == 2) {
+                                int id = scanner.nextInt();
+                                List<Media> filteredList = cart.filterMedia(id);
+
+                                if (filteredList.size() != 0) {
+                                    for (Media media : filteredList) {
+                                        System.out.println(media);
+                                    }
+                                } else {
+                                    System.out.println("Media not found!");
+                                }
+                            }
+                        }
+                        else if (option == 2) {
+                            sortingOptions();
+                            option = scanner.nextInt();
+                            scanner.nextLine();
+
+                            if (option == 1) {
+                                cart.itemsOrdered.sort(Media.COMPARE_BY_TITLE_COST);
+                            } else if (option == 2) {
+                                cart.itemsOrdered.sort(Media.COMPARE_BY_COST_TITLE);
+                            }
+
+                            cart.print();
+                        }
+                        else if (option == 3) {
+                            String title = scanner.nextLine();
+
+                            if (title.length() != 0) {
+                                Media media = cart.searchMedia(title);
+                                if (media != null) {
+                                    cart.removeMedia(media);
+                                }
+                            }
+                        }
+                        else if (option == 4) {
+                            String title = scanner.nextLine();
+
+                            if (title.length() != 0) {
+                                Media media = cart.searchMedia(title);
+                                if (media instanceof DVD || media instanceof CompactDisc) {
+                                    media.play();
+                                }
+                            }
+                        }
+                        else if (option == 5) {
+                            JOptionPane.showMessageDialog(null, "An order is created!");
+                            for (Media media : cart.itemsOrdered) {
+                                cart.itemsOrdered.remove(media);
+                            }
+                        }
                     }
                 }
 
@@ -247,9 +323,7 @@ public class Aims {
                     }
                 }
 
-                case 0 -> {
-                    loop = false;
-                }
+                case 0 -> loop = false;
 
                 default -> {
                 }
