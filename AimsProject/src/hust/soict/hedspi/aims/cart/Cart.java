@@ -39,7 +39,7 @@ public class Cart {
     }
     public void print() {
         for (int i = 0; i < itemsOrdered.size(); i++) {
-            System.out.printf("%d. %s", i + 1, itemsOrdered.get(i).toString());
+            System.out.printf("%d. %s%n", i + 1, itemsOrdered.get(i).toString());
         }
     }
     public List<Media> filterMedia(String title) {
