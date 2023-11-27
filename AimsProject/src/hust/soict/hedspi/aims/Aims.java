@@ -1,24 +1,27 @@
 package hust.soict.hedspi.aims;
 
-import hust.soict.hedspi.aims.cart.Cart;
+import hust.soict.hedspi.aims.media.Book;
+import hust.soict.hedspi.aims.media.CompactDisc;
 import hust.soict.hedspi.aims.media.DVD;
+import hust.soict.hedspi.aims.media.Media;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Aims {
     public static void main(String[] args) {
-        Cart anOrder = new Cart();
+        List<Media> media = new ArrayList<>();
 
-        DVD disc1 = new DVD("Happier", "Musical", "Timm Bertner", 87, 19.25f);
-        DVD disc2 = new DVD("One Piece", "Anime", "Steve Dawnson", 102, 20.45f);
+        DVD dvd = new DVD();
+        Book book = new Book();
+        CompactDisc cd = new CompactDisc();
 
-        anOrder.addDVDsToCart(disc1);
-        anOrder.addDVDsToCart(disc2);
+        media.add(dvd);
+        media.add(book);
+        media.add(cd);
 
-        System.out.println("Total cost is: ");
-        System.out.println(anOrder.calculateCost());
-
-        anOrder.removeDVDsFromCart(disc1);
-
-        System.out.println("Total cost is: ");
-        System.out.println(anOrder.calculateCost());
+        for (Media m : media) {
+            System.out.println(m.toString());
+        }
     }
 }
