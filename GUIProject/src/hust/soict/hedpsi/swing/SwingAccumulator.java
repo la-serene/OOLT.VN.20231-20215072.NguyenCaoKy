@@ -35,7 +35,7 @@ public class SwingAccumulator extends JFrame{
             int numberInt = Integer.parseInt(tfInput.getText());
             sum += numberInt;
             tfInput.setText("");
-            tfOutput.setText(sum + "");
+            tfOutput.setText(String.valueOf(sum));
         }
     }
 }
