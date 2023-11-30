@@ -5,6 +5,21 @@ import java.awt.*;
 
 public class StoreManagerScreen extends JFrame {
     private Store store;
+    public static void main(String[] args) {
+        new StoreManagerScreen(new Store());
+    }
+    public StoreManagerScreen(Store store) {
+        this.store = store;
+        Container cp = getContentPane();
+        cp.setLayout(new BorderLayout());
+        cp.add(createNorth(), BorderLayout.NORTH);
+        cp.add(createCenter(), BorderLayout.CENTER);
+
+        setTitle("Store");
+        setSize(1024, 768);
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
     JPanel createNorth() {
         JPanel north = new JPanel();
         north.setLayout(new BoxLayout(north, BoxLayout.Y_AXIS));
