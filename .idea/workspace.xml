@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="031e24ea-2a6a-4dde-b7cd-30ed61203346" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="031e24ea-2a6a-4dde-b7cd-30ed61203346" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +31,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/swing__component",
+    "git-widget-placeholder": "release/lab04",
     "last_opened_file_path": "I:/BKA/nam ba/20231/OOP Lab/OOLT.VN.20231-20215072.NguyenCaoKy",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
@@ -52,6 +50,7 @@
       <workItem from="1701332245633" duration="81000" />
       <workItem from="1701332384992" duration="61000" />
       <workItem from="1701332471977" duration="34000" />
+      <workItem from="1701335155411" duration="27000" />
     </task>
     <servers />
   </component>
