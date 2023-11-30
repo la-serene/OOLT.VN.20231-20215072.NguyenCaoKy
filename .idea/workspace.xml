@@ -31,7 +31,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "release/lab04",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
@@ -45,6 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700370978579</updated>
       <workItem from="1700370986103" duration="13000" />
+      <workItem from="1701332245633" duration="81000" />
     </task>
     <servers />
   </component>
