@@ -1,14 +1,16 @@
-package hust.soict.hedpsi.aims.screen.manager;
+package hust.soict.hedspi.aims.screen.manager;
+
+import hust.soict.hedspi.aims.media.Media;
+import hust.soict.hedspi.aims.media.Playable;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class MediaStore extends JFrame {
+public class MediaStore extends JPanel {
     private Media media;
-
     public MediaStore(Media media) {
         this.media = media;
-        this.setLayout = (new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         JLabel title = new JLabel(media.getTitle());
         title.setFont(new Font(title.getFont().getName(), Font.PLAIN, 15));
@@ -17,7 +19,7 @@ public class MediaStore extends JFrame {
         JLabel cost = new JLabel(String.format("%.2f $", media.getCost()));
         cost.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JLabel container = new JPanel();
+        JLabel container = new JLabel();
         container.setLayout(new FlowLayout(FlowLayout.CENTER));
 
         if (media instanceof Playable) {

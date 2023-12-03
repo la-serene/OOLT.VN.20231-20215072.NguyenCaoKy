@@ -32,4 +32,7 @@ public class Store {
         for (int i = 0; i < itemsInStore.size(); i++)
             System.out.printf("%d. %s%n", i + 1, itemsInStore.get(i).toString());
     }
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
 }

@@ -1,7 +1,11 @@
-package hust.soict.hedpsi.aims.screen.manager;
+package hust.soict.hedspi.aims.screen.manager;
+
+import hust.soict.hedspi.aims.media.Media;
+import hust.soict.hedspi.aims.store.Store;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class StoreManagerScreen extends JFrame {
     private Store store;
@@ -67,7 +71,7 @@ public class StoreManagerScreen extends JFrame {
 
         ArrayList<Media> mediaInStore = store.getItemsInStore();
         for (int i = 0; i < 9; i++) {
-            MediaStore cell = new MediaStore(new mediaInStore.get(i));
+            MediaStore cell = new MediaStore(mediaInStore.get(i));
             center.add(cell);
         }
 
