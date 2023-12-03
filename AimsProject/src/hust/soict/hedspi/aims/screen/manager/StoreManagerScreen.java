@@ -8,6 +8,8 @@ import hust.soict.hedspi.aims.store.Store;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class StoreManagerScreen extends JFrame {
@@ -40,15 +42,22 @@ public class StoreManagerScreen extends JFrame {
         north.add(createHeader());
         return north;
     }
-
     JMenuBar createMenuBar() {
         JMenu menu = new JMenu("Options");
-        menu.add(new JMenuItem("View store"));
+        JMenuItem viewStore = new JMenuItem("View store");
+        menu.add(viewStore);
 
         JMenu smUpdateStore = new JMenu("Update store");
-        smUpdateStore.add(new JMenuItem("Add Book"));
-        smUpdateStore.add(new JMenuItem("Add CD"));
-        smUpdateStore.add(new JMenuItem("Add DVD"));
+        JMenuItem addBook = new JMenuItem("Add Book");
+        JMenuItem addCD = new JMenuItem("Add CD");
+        JMenuItem addDVD = new JMenuItem("Add DVD");
+        addBook.addActionListener(e -> new AddBookToStoreScreen(store));
+        addCD.addActionListener(e -> new AddCDToStoreScreen(store));
+        addDVD.addActionListener(e -> new AddDVDToStoreScreen(store));
+
+        smUpdateStore.add(addBook);
+        smUpdateStore.add(addCD);
+        smUpdateStore.add(addDVD);
         menu.add(smUpdateStore);
 
         JMenuBar menuBar = new JMenuBar();
@@ -57,7 +66,6 @@ public class StoreManagerScreen extends JFrame {
 
         return menuBar;
     }
-
     JPanel createHeader() {
         JPanel header = new JPanel();
         header.setLayout(new BoxLayout(header, BoxLayout.X_AXIS));
@@ -73,7 +81,6 @@ public class StoreManagerScreen extends JFrame {
 
         return header;
     }
-
     JPanel createCenter() {
         JPanel center = new JPanel();
         center.setLayout(new GridLayout(3, 3, 2, 2));
