@@ -4,6 +4,13 @@ import javax.swing.*;
 
 public class DVD extends Disc {
     public DVD() { super(); }
+
+    public DVD(String title, String category, float cost) {
+        this.setTitle(title);
+        this.setCategory(category);
+        this.setCost(cost);
+    }
+
     public String toString() {
         return String.format("DVD - %s - %s - %s - %d: %.2f $", this.getTitle(), this.getCategory(), this.getDirector(), this.getLength(), this.getCost());
     }

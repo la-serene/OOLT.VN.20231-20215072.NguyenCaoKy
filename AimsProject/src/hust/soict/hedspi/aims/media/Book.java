@@ -9,6 +9,13 @@ public class Book extends Media {
     public Book() {
         super();
     }
+
+    public Book(String title, String category, float cost) {
+        this.setTitle(title);
+        this.setCategory(category);
+        this.setCost(cost);
+    }
+
     public void addAuthor(String authorName) {
         if (authors.contains(authorName)) {
             System.out.println("Author already exists!");
