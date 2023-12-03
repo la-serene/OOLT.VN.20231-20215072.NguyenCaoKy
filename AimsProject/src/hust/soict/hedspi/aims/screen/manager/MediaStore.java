@@ -19,11 +19,13 @@ public class MediaStore extends JPanel {
         JLabel cost = new JLabel(String.format("%.2f $", media.getCost()));
         cost.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JLabel container = new JLabel();
+        JPanel container = new JPanel();
         container.setLayout(new FlowLayout(FlowLayout.CENTER));
 
-        JButton playButton = new JButton("Play");
-        container.add(playButton);
+        if (media instanceof Playable) {
+            JButton playButton = new JButton("Play");
+            container.add(playButton);
+        }
 
         this.add(Box.createVerticalGlue());
         this.add(title);
