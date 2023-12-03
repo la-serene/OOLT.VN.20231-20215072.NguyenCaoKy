@@ -33,6 +33,9 @@ public abstract class Media implements Playable {
     public String getCategory() {
         return category;
     }
+    public void setCategory(String category) {
+        this.category = category;
+    }
     public float getCost() {
         return cost;
     }
