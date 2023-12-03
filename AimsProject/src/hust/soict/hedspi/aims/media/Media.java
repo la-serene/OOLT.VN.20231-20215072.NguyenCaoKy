@@ -2,7 +2,7 @@ package hust.soict.hedspi.aims.media;
 
 import java.util.Comparator;
 
-public abstract class Media implements Playable {
+public abstract class Media {
     private int id;
     private String title;
     private String category;
@@ -16,7 +16,6 @@ public abstract class Media implements Playable {
 
         return false;
     }
-    public void play() {}
     public static final Comparator<Media> COMPARE_BY_TITLE_COST = Comparator.comparing(Media::getTitle)
             .thenComparing(Media::getCost);
     public static final Comparator<Media> COMPARE_BY_COST_TITLE = Comparator.comparing(Media::getCost)

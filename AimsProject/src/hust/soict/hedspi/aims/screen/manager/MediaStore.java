@@ -22,10 +22,8 @@ public class MediaStore extends JPanel {
         JLabel container = new JLabel();
         container.setLayout(new FlowLayout(FlowLayout.CENTER));
 
-        if (media instanceof Playable) {
-            JButton playButton = new JButton("Play");
-            container.add(playButton);
-        }
+        JButton playButton = new JButton("Play");
+        container.add(playButton);
 
         this.add(Box.createVerticalGlue());
         this.add(title);

@@ -8,6 +8,13 @@ public class CompactDisc extends Disc{
     public CompactDisc() {
         super();
     }
+
+    public CompactDisc(String title, String category, float cost) {
+        this.setTitle(title);
+        this.setCategory(category);
+        this.setCost(cost);
+    }
+
     public void addTrack(Track track) {
         if (tracks.contains(track)) {
             System.out.println("Track already exists!");

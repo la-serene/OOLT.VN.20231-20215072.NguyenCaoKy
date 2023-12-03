@@ -1,6 +1,7 @@
 package hust.soict.hedspi.aims.screen.manager;
 
 import hust.soict.hedspi.aims.media.Book;
+import hust.soict.hedspi.aims.media.CompactDisc;
 import hust.soict.hedspi.aims.media.DVD;
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.store.Store;
@@ -15,7 +16,9 @@ public class StoreManagerScreen extends JFrame {
         Store store = new Store();
         store.addMedia(new DVD("The Lion King", "Animation", 19.95f));
         store.addMedia(new Book("Star Wars", "Science Fiction", 24.95f));
-
+        store.addMedia(new Book("Aladin", "Animation", 18.99f));
+        store.addMedia(new CompactDisc("Hello", "Pop", 12.99f));
+        store.addMedia(new CompactDisc("Greeting", "Pop", 14.99f));
         StoreManagerScreen storeManagerScreen = new StoreManagerScreen(store);
     }
     public StoreManagerScreen(Store store) {
@@ -76,7 +79,7 @@ public class StoreManagerScreen extends JFrame {
         center.setLayout(new GridLayout(3, 3, 2, 2));
 
         ArrayList<Media> mediaInStore = store.getItemsInStore();
-        for (int i = 0; i < mediaInStore.size() || i < 9; i++) {
+        for (int i = 0; i < mediaInStore.size(); i++) {
             MediaStore cell = new MediaStore(mediaInStore.get(i));
             center.add(cell);
         }
