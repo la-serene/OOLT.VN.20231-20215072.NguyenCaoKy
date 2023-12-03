@@ -38,6 +38,7 @@ public abstract class AddItemToStoreScreen extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
+
     private class addBtnListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
