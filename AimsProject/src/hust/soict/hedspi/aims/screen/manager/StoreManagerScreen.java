@@ -1,5 +1,7 @@
 package hust.soict.hedspi.aims.screen.manager;
 
+import hust.soict.hedspi.aims.media.Book;
+import hust.soict.hedspi.aims.media.DVD;
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.store.Store;
 
@@ -10,7 +12,11 @@ import java.util.ArrayList;
 public class StoreManagerScreen extends JFrame {
     private Store store;
     public static void main(String[] args) {
-        new StoreManagerScreen(new Store());
+        Store store = new Store();
+        store.addMedia(new DVD("The Lion King", "Animation", 19.95f));
+        store.addMedia(new Book("Star Wars", "Science Fiction", 24.95f));
+
+        StoreManagerScreen storeManagerScreen = new StoreManagerScreen(store);
     }
     public StoreManagerScreen(Store store) {
         this.store = store;
