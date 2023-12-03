@@ -1,4 +1,4 @@
-package hust.soict.hedpsi.swing;
+package hust.soict.hedspi.swing.GUIProject.src;
 
 import javax.swing.*;
 import java.awt.*;
