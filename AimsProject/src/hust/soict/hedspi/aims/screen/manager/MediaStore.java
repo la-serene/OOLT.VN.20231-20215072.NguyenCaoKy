@@ -5,12 +5,9 @@ import hust.soict.hedspi.aims.media.Playable;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class MediaStore extends JPanel {
-    private Media media;
     public MediaStore(Media media) {
-        this.media = media;
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         JLabel title = new JLabel(media.getTitle());

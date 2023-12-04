@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class StoreManagerScreen extends JFrame {
     private Store store;
+    private JPanel center;
     public static void main(String[] args) {
         Store store = new Store();
         store.addMedia(new DVD("The Lion King", "Animation", 19.95f));
@@ -19,14 +20,15 @@ public class StoreManagerScreen extends JFrame {
         store.addMedia(new Book("Aladin", "Animation", 18.99f));
         store.addMedia(new CompactDisc("Hello", "Pop", 12.99f));
         store.addMedia(new CompactDisc("Greeting", "Pop", 14.99f));
-        StoreManagerScreen storeManagerScreen = new StoreManagerScreen(store);
+        new StoreManagerScreen(store);
     }
     public StoreManagerScreen(Store store) {
         this.store = store;
         Container cp = getContentPane();
         cp.setLayout(new BorderLayout());
         cp.add(createNorth(), BorderLayout.NORTH);
-        cp.add(createCenter(), BorderLayout.CENTER);
+        center = createCenter();
+        cp.add(center, BorderLayout.CENTER);
 
         setTitle("Store");
         setSize(1024, 768);
@@ -92,7 +94,21 @@ public class StoreManagerScreen extends JFrame {
 
         return center;
     }
+    public void updateStoreScreen() {
+        ArrayList<Media> mediaInStore = this.store.getItemsInStore();
+
+        for (Media media : mediaInStore) {
+            MediaStore cell = new MediaStore(media);
+            this.center.add(cell);
+        }
+
+        this.repaint();
+        this.revalidate();
+    }
     public Store getStore() {
         return this.store;
+    }
+    public JPanel getCenter() {
+        return this.center;
     }
 }
