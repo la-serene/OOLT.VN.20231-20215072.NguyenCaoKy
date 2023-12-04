@@ -101,7 +101,6 @@ public class StoreManagerScreen extends JFrame {
             MediaStore cell = new MediaStore(media);
             this.center.add(cell);
         }
-
         this.repaint();
         this.revalidate();
     }
