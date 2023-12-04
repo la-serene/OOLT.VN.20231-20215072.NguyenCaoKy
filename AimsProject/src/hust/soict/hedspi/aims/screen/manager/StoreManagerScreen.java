@@ -43,15 +43,16 @@ public class StoreManagerScreen extends JFrame {
     JMenuBar createMenuBar() {
         JMenu menu = new JMenu("Options");
         JMenuItem viewStore = new JMenuItem("View store");
+        viewStore.addActionListener(e -> store.print());
         menu.add(viewStore);
 
         JMenu smUpdateStore = new JMenu("Update store");
         JMenuItem addBook = new JMenuItem("Add Book");
         JMenuItem addCD = new JMenuItem("Add CD");
         JMenuItem addDVD = new JMenuItem("Add DVD");
-        addBook.addActionListener(e -> new AddBookToStoreScreen(store));
-        addCD.addActionListener(e -> new AddCDToStoreScreen(store));
-        addDVD.addActionListener(e -> new AddDVDToStoreScreen(store));
+        addBook.addActionListener(e -> new AddBookToStoreScreen(this));
+        addCD.addActionListener(e -> new AddCDToStoreScreen(this));
+        addDVD.addActionListener(e -> new AddDVDToStoreScreen(this));
 
         smUpdateStore.add(addBook);
         smUpdateStore.add(addCD);
@@ -84,11 +85,14 @@ public class StoreManagerScreen extends JFrame {
         center.setLayout(new GridLayout(3, 3, 2, 2));
 
         ArrayList<Media> mediaInStore = store.getItemsInStore();
-        for (int i = 0; i < mediaInStore.size(); i++) {
-            MediaStore cell = new MediaStore(mediaInStore.get(i));
+        for (Media media : mediaInStore) {
+            MediaStore cell = new MediaStore(media);
             center.add(cell);
         }
 
         return center;
+    }
+    public Store getStore() {
+        return this.store;
     }
 }

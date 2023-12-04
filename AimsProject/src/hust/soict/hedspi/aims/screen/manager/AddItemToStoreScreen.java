@@ -9,13 +9,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public abstract class AddItemToStoreScreen extends JFrame {
-    public Store store;
+    private StoreManagerScreen storeManagerScreen;
     private JTextField titleField = new JTextField();
     private JTextField categoryField = new JTextField();
     private JTextField costField = new JTextField();
 
-    public AddItemToStoreScreen(Store store) {
-        this.store = store;
+    public AddItemToStoreScreen(StoreManagerScreen storeManagerScreen) {
+        this.storeManagerScreen = storeManagerScreen;
         Container cp = getContentPane();
         cp.setLayout(new BorderLayout());
 
@@ -35,10 +35,9 @@ public abstract class AddItemToStoreScreen extends JFrame {
 
         setTitle("Add Item to Store Screen");
         setSize(440, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
     }
-
     private class addBtnListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -46,7 +45,9 @@ public abstract class AddItemToStoreScreen extends JFrame {
             String category = categoryField.getText();
             int cost = Integer.parseInt(costField.getText());
 
-            store.addMedia(new Book(title, category, cost));
+            storeManagerScreen.getStore().addMedia(new Book(title, category, cost));
+            storeManagerScreen.repaint();
+            storeManagerScreen.revalidate();
         }
     }
 }
