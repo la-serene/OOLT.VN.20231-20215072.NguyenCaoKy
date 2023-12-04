@@ -1,13 +1,11 @@
 package hust.soict.hedspi.aims.screen.manager;
 
 import hust.soict.hedspi.aims.media.DVD;
-import hust.soict.hedspi.aims.media.Media;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class AddDVDToStoreScreen extends AddItemToStoreScreen{
     public AddDVDToStoreScreen(StoreManagerScreen storeManagerScreen) {
