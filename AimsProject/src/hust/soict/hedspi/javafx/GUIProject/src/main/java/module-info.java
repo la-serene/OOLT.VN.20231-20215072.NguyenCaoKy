@@ -8,8 +8,6 @@ module com.example.guiproject {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
-    requires eu.hansolo.tilesfx;
-    requires com.almasb.fxgl.all;
 
     opens com.example.guiproject to javafx.fxml;
     exports com.example.guiproject;
