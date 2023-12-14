@@ -13,20 +13,16 @@
             <BorderPane.margin>
                 <Insets right="8.0" />
             </BorderPane.margin>
-<!--         <TitledPane animated="false" text="Tools">-->
-<!--           <content>-->
-<!--             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="70.0" prefWidth="71.0">-->
-<!--                  <children>-->
-<!--                     <RadioButton layoutX="7.0" layoutY="2.0" mnemonicParsing="false" selected="true" text="Pen">-->
-<!--                        <toggleGroup>-->
-<!--                           <ToggleGroup fx:id="Tools" />-->
-<!--                        </toggleGroup>-->
-<!--                     </RadioButton>-->
-<!--                     <RadioButton layoutX="7.0" layoutY="27.0" mnemonicParsing="false" onAction="#drawingAreaEraser" text="Eraser" toggleGroup="$Tools" />-->
-<!--                  </children>-->
-<!--               </AnchorPane>-->
-<!--           </content>-->
-<!--         </TitledPane>-->
+            <TitledPane animated="false" text="Tools">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="70.0" prefWidth="71.0">
+                    <RadioButton layoutX="7.0" layoutY="2.0" mnemonicParsing="false" onAction="#drawingAreaPen" selected="true" text="Pen">
+                        <toggleGroup>
+                            <ToggleGroup fx:id="Tools" />
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton layoutX="7.0" layoutY="27.0" mnemonicParsing="false" onAction="#drawingAreaEraser" text="Eraser" toggleGroup="$Tools" />
+                </AnchorPane>
+            </TitledPane>
             <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearButtonPressed" text="Clear" />
         </VBox>
     </left>

@@ -1,6 +1,5 @@
 package com.example.guiproject;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -10,21 +9,28 @@ import javafx.scene.shape.Circle;
 public class PainterController {
     @FXML
     private Pane drawingAreaPane;
+    private Color mouseColor = Color.BLACK;
+    private int radius = 4;
 
     @FXML
-    public void clearButtonPressed(ActionEvent e) {
+    public void clearButtonPressed() {
         drawingAreaPane.getChildren().clear();
     }
 
     @FXML
     public void drawingAreaMouseDragged(MouseEvent e) {
-        Circle newCircle = new Circle(e.getX(), e.getY(), 4, Color.BLACK);
+        Circle newCircle = new Circle(e.getX(), e.getY(), radius, mouseColor);
         drawingAreaPane.getChildren().add(newCircle);
     }
 
     @FXML
-    public void drawingAreaEraser(MouseEvent e) {
-        Circle newCircle = new Circle(e.getX(), e.getY(), 4, Color.WHITE);
-        drawingAreaPane.getChildren().add(newCircle);
+    public void drawingAreaPen() {
+        mouseColor = Color.BLACK;
+        radius = 4;
+    }
+    @FXML
+    public void drawingAreaEraser() {
+        mouseColor = Color.WHITE;
+        radius = 8;
     }
 }
