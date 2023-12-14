@@ -7,7 +7,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-public class    PainterController {
+public class PainterController {
     @FXML
     private Pane drawingAreaPane;
 
