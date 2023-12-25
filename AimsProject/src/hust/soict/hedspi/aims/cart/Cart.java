@@ -1,12 +1,14 @@
 package hust.soict.hedspi.aims.cart;
 
 import hust.soict.hedspi.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
-    public ArrayList<Media> itemsOrdered = new ArrayList<>();
+    public ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
     public void addMedia(Media media) {
         if (itemsOrdered.contains(media)) {
             System.out.println("Media already exists!");
@@ -62,5 +64,9 @@ public class Cart {
         }
 
         return filteredMedia;
+    }
+
+    public List<Media> getItemOrdered() {
+        return itemsOrdered;
     }
 }
