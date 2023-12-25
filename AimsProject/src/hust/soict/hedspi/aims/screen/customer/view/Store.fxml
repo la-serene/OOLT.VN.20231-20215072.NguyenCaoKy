@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <VBox alignment="CENTER" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.14-internal"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="hust.soict.hedspi.aims.screen.customer.controller.ViewStoreController">
+      xmlns:fx="http://javafx.com/fxml/1">
     <padding>
         <Insets left="20.0"/>
     </padding>
@@ -22,7 +21,7 @@
             </padding>
         </Label>
         <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
-        <Button minHeight="50.0" mnemonicParsing="false" onAction="#btnViewCartPressed" prefWidth="100.0"
+        <Button minHeight="50.0" mnemonicParsing="false" prefWidth="100.0"
                 text="View Cart">
             <HBox.margin>
                 <Insets right="20.0"/>

@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class ViewStoreController {
     private Store store;
-    @FXML private GridPane gridPane;
+    @FXML public GridPane gridPane;
     public ViewStoreController(Store store) {
         this.store = store;
     }

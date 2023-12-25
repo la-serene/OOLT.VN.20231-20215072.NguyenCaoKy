@@ -29,7 +29,7 @@
             </BorderPane.margin>
             <TableView fx:id="tblMedia" prefHeight="200.0" prefWidth="200.0">
                 <columns>
-                    <TableColumn fx:id="colMedia" prefWidth="75.0" text="ID"/>
+                    <TableColumn fx:id="colMediaId" prefWidth="75.0" text="ID"/>
                     <TableColumn fx:id="colMediaTitle" prefWidth="75.0" text="Title"/>
                     <TableColumn fx:id="colMediaCategory" prefWidth="75.0" text="Category"/>
                     <TableColumn fx:id="colMediaCost" prefWidth="75.0" text="Cost"/>

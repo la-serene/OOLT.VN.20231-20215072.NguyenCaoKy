@@ -66,7 +66,7 @@ public class Cart {
         return filteredMedia;
     }
 
-    public List<Media> getItemOrdered() {
+    public ObservableList<Media> getItemsOrdered() {
         return itemsOrdered;
     }
 }

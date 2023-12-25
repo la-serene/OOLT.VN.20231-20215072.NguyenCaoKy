@@ -7,4 +7,6 @@ module AimsProject {
 
     opens hust.soict.hedspi.aims;
     opens hust.soict.hedspi.test.screen.customer.store;
+
+    exports hust.soict.hedspi.aims.screen.customer.controller;
 }
