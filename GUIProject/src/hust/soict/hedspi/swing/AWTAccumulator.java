@@ -1,4 +1,4 @@
-package hust.soict.hedpsi.swing;
+package hust.soict.hedspi.swing;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

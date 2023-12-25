@@ -1,4 +1,4 @@
-package com.example.guiproject;
+package hust.soict.hedspi.javafx;
 
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;

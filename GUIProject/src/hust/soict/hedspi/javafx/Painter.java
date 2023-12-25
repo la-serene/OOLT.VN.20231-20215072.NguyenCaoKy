@@ -1,4 +1,4 @@
-package com.example.guiproject;
+package hust.soict.hedspi.javafx;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ public class Painter extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass()
-                .getResource("/com/example/guiproject/Painter.fxml")));
+                .getResource("Painter.fxml")));
         Scene scene = new Scene(root);
         stage.setTitle("Painter");
         stage.setScene(scene);
