@@ -11,10 +11,13 @@ import java.io.IOException;
 
 public class ViewStoreController {
     private Store store;
-    @FXML public GridPane gridPane;
+    @FXML
+    public GridPane gridPane;
+
     public ViewStoreController(Store store) {
         this.store = store;
     }
+
     @FXML
     public void initialize() {
         final String ITEM_FXML_FILE_PATH = "/hust/soict/hedspi/aims/screen/customer/view/Item.fxml";
@@ -30,6 +33,7 @@ public class ViewStoreController {
                 fxmlLoader.setController(itemController);
 
                 AnchorPane anchorPane = new AnchorPane();
+
                 anchorPane = fxmlLoader.load();
 
                 itemController.setData(store.getItemsInStore().get(i));

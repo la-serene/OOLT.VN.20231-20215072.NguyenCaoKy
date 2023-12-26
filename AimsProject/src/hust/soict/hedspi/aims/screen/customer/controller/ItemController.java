@@ -29,6 +29,6 @@ public class ItemController {
     public void btnAddToCartClicked(ActionEvent e) {
 
     }
-    public void btnPlayClicked(ActionEvent actionEvent) {
+    public void btnPlayClicked(ActionEvent e) {
     }
 }
