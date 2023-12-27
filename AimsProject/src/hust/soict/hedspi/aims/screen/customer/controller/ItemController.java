@@ -41,13 +41,10 @@ public class ItemController {
         try {
             final String PLAYING_POPUP_PATH = "/hust/soict/hedspi/aims/screen/customer/view/PlayingPopUp.fxml";
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(PLAYING_POPUP_PATH));
-            PlayingPopUpController playingPopUpController = new PlayingPopUpController();
-
-            if (fxmlLoader.getController() != null) playingPopUpController = fxmlLoader.getController();
-
-//            playingPopUpController.setPlayingText(media.getTitle(), media.getCost());
-
             Parent popUpRoot = fxmlLoader.load();
+
+            PlayingPopUpController playingPopUpController = fxmlLoader.getController();
+            playingPopUpController.setPlayingText(media.getTitle(), media.getCost());
 
             Stage popUpStage = new Stage();
             popUpStage.initModality(Modality.NONE);

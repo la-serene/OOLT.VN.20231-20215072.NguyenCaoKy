@@ -113,6 +113,7 @@ public class CartController {
             final String STORE_FXML_FILE_PATH = "/hust/soict/hedspi/aims/screen/customer/view/Store.fxml";
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(STORE_FXML_FILE_PATH));
             fxmlLoader.setController(new ViewStoreController(store, cart));
+
             Parent root = fxmlLoader.load();
 
             Stage storeStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -122,6 +123,5 @@ public class CartController {
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
-
     }
 }
