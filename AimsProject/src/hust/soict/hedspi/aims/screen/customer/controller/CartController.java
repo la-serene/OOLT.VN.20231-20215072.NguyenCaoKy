@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class CartController {
-    private final Cart cart;
+    private Cart cart;
     private final Store store;
     @FXML
     public TableView<Media> tblMedia;
@@ -44,7 +44,9 @@ public class CartController {
         this.store = store;
         this.cart = cart;
     }
-
+    public void updateTotalCost() {
+        costLabel.setText(cart.getTotalCost() + "$");
+    }
     @FXML
     public void initialize() {
         colMediaId.setCellValueFactory(
@@ -94,7 +96,7 @@ public class CartController {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         cart.removeMedia(media);
         cart.setTotalCost(cart.getTotalCost() - media.getCost());
-        costLabel.setText(cart.getTotalCost() + "$");
+        updateTotalCost();
     }
     @FXML
     void btnPlayPressed(ActionEvent e) {
@@ -122,6 +124,22 @@ public class CartController {
     }
     @FXML
     public void btnPlaceOrderClicked(ActionEvent e) {
+        try {
+            final String ORDER_PLACED_POPUP_PATH = "/hust/soict/hedspi/aims/screen/customer/view/OrderPlacedPopUp.fxml";
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(ORDER_PLACED_POPUP_PATH));
 
+            Parent orderPlacedPopUpRoot = fxmlLoader.load();
+            Stage orderPlacedStage = new Stage();
+            orderPlacedStage.initOwner(((Node) e.getSource()).getScene().getWindow());
+            orderPlacedStage.setScene(new Scene(orderPlacedPopUpRoot));
+            orderPlacedStage.setTitle("Notification");
+            orderPlacedStage.show();
+
+            tblMedia.getItems().clear();
+            cart = new Cart();
+            updateTotalCost();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
     }
 }
