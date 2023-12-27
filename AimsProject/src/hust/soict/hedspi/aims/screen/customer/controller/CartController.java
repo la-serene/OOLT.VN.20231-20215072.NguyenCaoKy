@@ -74,11 +74,9 @@ public class CartController {
                 (observable, oldValue, newValue) -> showFilteredMedia(newValue)
         );
     }
-
     void showFilteredMedia(String value) {
 
     }
-
     void updateButtonBar(Media media) {
         if (media == null) {
             btnPlay.setVisible(false);
@@ -95,6 +93,7 @@ public class CartController {
     void btnRemovePressed(ActionEvent e) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         cart.removeMedia(media);
+        cart.setTotalCost(cart.getTotalCost() - media.getCost());
     }
     @FXML
     void btnPlayPressed(ActionEvent e) {
@@ -119,5 +118,9 @@ public class CartController {
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
+    }
+    @FXML
+    public void btnPlaceOrderClicked(ActionEvent e) {
+
     }
 }

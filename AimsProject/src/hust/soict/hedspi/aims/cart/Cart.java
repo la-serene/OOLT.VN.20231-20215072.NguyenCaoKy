@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Cart {
     public ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
+    public float totalCost = 0;
     public void addMedia(Media media) {
         if (itemsOrdered.contains(media)) {
             System.out.println("Media already exists!");
@@ -65,7 +66,12 @@ public class Cart {
 
         return filteredMedia;
     }
-
+    public float getTotalCost() {
+        return this.totalCost;
+    }
+    public void setTotalCost(float totalCost) {
+        this.totalCost = totalCost;
+    }
     public ObservableList<Media> getItemsOrdered() {
         return itemsOrdered;
     }

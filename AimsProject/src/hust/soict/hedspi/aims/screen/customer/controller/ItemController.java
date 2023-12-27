@@ -33,6 +33,7 @@ public class ItemController {
     }
     public void btnAddToCartClicked(ActionEvent e) {
         cart.addMedia(media);
+        cart.setTotalCost(cart.getTotalCost() + media.getCost());
     }
     public void btnPlayClicked(ActionEvent e) {
         PlayingPopUpController playingPopUpController = new PlayingPopUpController();
