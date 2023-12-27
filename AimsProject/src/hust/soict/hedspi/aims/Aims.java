@@ -1,6 +1,7 @@
 package hust.soict.hedspi.aims;
 
 import hust.soict.hedspi.aims.cart.Cart;
+import hust.soict.hedspi.aims.exception.PlayerException;
 import hust.soict.hedspi.aims.media.*;
 import hust.soict.hedspi.aims.store.Store;
 
@@ -70,7 +71,11 @@ public class Aims {
                                     System.out.println();
                                 } else if (option == 2) {
                                     if (media instanceof DVD || media instanceof CompactDisc) {
-                                        ((Disc) media).play();
+                                        try {
+                                            ((Disc) media).play();
+                                        } catch (PlayerException pe) {
+                                            pe.printStackTrace();
+                                        }
                                     } else {
                                         System.out.println();
                                     }
@@ -111,7 +116,11 @@ public class Aims {
                         if (title.length() != 0) {
                             Media media = store.searchMedia(title);
                             if ((media instanceof CompactDisc || media instanceof DVD)) {
-                                ((Disc) media).play();
+                                try {
+                                    ((Disc) media).play();
+                                } catch (PlayerException pe) {
+                                    pe.printStackTrace();
+                                }
                             } else {
                                 System.out.println("Media not playable!");
                             }
@@ -183,7 +192,11 @@ public class Aims {
                             if (title.length() != 0) {
                                 Media media = cart.searchMedia(title);
                                 if (media instanceof DVD || media instanceof CompactDisc) {
-                                    ((Disc) media).play();
+                                    try {
+                                        ((Disc) media).play();
+                                    } catch (PlayerException pe) {
+                                        pe.printStackTrace();
+                                    }
                                 }
                             }
                         }
@@ -315,7 +328,11 @@ public class Aims {
                         if (title.length() != 0) {
                             Media media = cart.searchMedia(title);
                             if (media instanceof DVD || media instanceof CompactDisc) {
-                                ((Disc) media).play();
+                                try {
+                                    ((Disc) media).play();
+                                } catch (PlayerException pe) {
+                                    pe.printStackTrace();
+                                }
                             }
                         }
                     }
