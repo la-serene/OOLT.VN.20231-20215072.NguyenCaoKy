@@ -17,8 +17,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class CartController {
-    private Cart cart;
-    private Store store;
+    private final Cart cart;
+    private final Store store;
     @FXML
     public TableView<Media> tblMedia;
     @FXML
@@ -39,10 +39,6 @@ public class CartController {
     public ToggleGroup filterCategory;
     @FXML
     public Label costLabel;
-
-    public CartController(Cart cart) {
-        this.cart = cart;
-    }
 
     public CartController(Store store, Cart cart) {
         this.store = store;
