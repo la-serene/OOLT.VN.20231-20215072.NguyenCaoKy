@@ -4,10 +4,17 @@ import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.media.Playable;
 import hust.soict.hedspi.aims.store.Store;
-    import javafx.event.ActionEvent;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CartController {
     private Cart cart;
@@ -26,18 +33,22 @@ public class CartController {
     public Button btnRemove;
     @FXML
     public Button btnPlay;
-    @FXML TextField tfFilter;
+    @FXML
+    TextField tfFilter;
     @FXML
     public ToggleGroup filterCategory;
     @FXML
     public Label costLabel;
+
     public CartController(Cart cart) {
         this.cart = cart;
     }
+
     public CartController(Store store, Cart cart) {
         this.store = store;
         this.cart = cart;
     }
+
     @FXML
     public void initialize() {
         colMediaId.setCellValueFactory(
@@ -67,9 +78,11 @@ public class CartController {
                 (observable, oldValue, newValue) -> showFilteredMedia(newValue)
         );
     }
+
     void showFilteredMedia(String value) {
 
     }
+
     void updateButtonBar(Media media) {
         if (media == null) {
             btnPlay.setVisible(false);
@@ -82,17 +95,33 @@ public class CartController {
             btnPlay.setVisible(media instanceof Playable);
         }
     }
+
     @FXML
     void btnRemovePressed(ActionEvent e) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         cart.removeMedia(media);
     }
+
     @FXML
     void btnPlayPressed(ActionEvent e) {
 
     }
+
     @FXML
     void btnViewStorePressed(ActionEvent e) {
+        try {
+            final String STORE_FXML_FILE_PATH = "/hust/soict/hedspi/aims/screen/customer/view/Store.fxml";
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(STORE_FXML_FILE_PATH));
+            fxmlLoader.setController(new ViewStoreController(store, cart));
+            Parent root = fxmlLoader.load();
+
+            Stage storeStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            storeStage.setScene(new Scene(root));
+            storeStage.setTitle("Store");
+            storeStage.show();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
 
     }
 }
