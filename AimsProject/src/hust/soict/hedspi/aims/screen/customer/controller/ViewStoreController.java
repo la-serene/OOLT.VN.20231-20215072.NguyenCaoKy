@@ -1,23 +1,50 @@
 package hust.soict.hedspi.aims.screen.customer.controller;
 
+import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.store.Store;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class ViewStoreController {
     private Store store;
+    private Cart cart;
     @FXML
     public GridPane gridPane;
-
     public ViewStoreController(Store store) {
         this.store = store;
     }
+    public ViewStoreController(Store store, Cart cart) {
+        this.store = store;
+        this.cart = cart;
+    }
+    @FXML
+    public void btnViewCartPressed(ActionEvent e) {
+        try {
+            final String CART_FXML_FILE_PATH = "/hust/soict/hedspi/aims/screen/customer/view/Cart.fxml";
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(CART_FXML_FILE_PATH));
 
+            Cart cart = new Cart();
+            fxmlLoader.setController(new CartController(store, cart));
+
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Cart");
+            stage.show();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+    }
     @FXML
     public void initialize() {
         final String ITEM_FXML_FILE_PATH = "/hust/soict/hedspi/aims/screen/customer/view/Item.fxml";
