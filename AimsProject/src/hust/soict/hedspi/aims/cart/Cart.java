@@ -10,12 +10,14 @@ import java.util.List;
 public class Cart {
     public ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
     public float totalCost = 0;
-    public void addMedia(Media media) {
+    public boolean addMedia(Media media) {
         if (itemsOrdered.contains(media)) {
             System.out.println("Media already exists!");
+            return false;
         } else {
             itemsOrdered.add(media);
-            System.out.println("Media added!");
+            System.out.println("Media added to cart!");
+            return true;
         }
     }
     public void removeMedia(Media media) {
