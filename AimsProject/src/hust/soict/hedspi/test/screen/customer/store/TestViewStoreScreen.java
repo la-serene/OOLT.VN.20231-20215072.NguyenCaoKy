@@ -1,5 +1,6 @@
 package hust.soict.hedspi.test.screen.customer.store;
 
+import hust.soict.hedspi.aims.cart.Cart;
 import hust.soict.hedspi.aims.media.Book;
 import hust.soict.hedspi.aims.media.CompactDisc;
 import hust.soict.hedspi.aims.media.DVD;
@@ -13,12 +14,13 @@ import javafx.stage.Stage;
 
 public class TestViewStoreScreen extends Application {
     private static Store store;
+    private static Cart cart;
     @Override
     public void start(Stage primaryStage) throws Exception {
         final String STORE_FXML_FILE_PATH = "/hust/soict/hedspi/aims/screen/customer/view/Store.fxml";
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(STORE_FXML_FILE_PATH));
 
-        fxmlLoader.setController(new ViewStoreController(store));
+        fxmlLoader.setController(new ViewStoreController(store, cart));
 
         Parent root = fxmlLoader.load();
 
@@ -29,6 +31,7 @@ public class TestViewStoreScreen extends Application {
 
     public static void main(String[] args) {
         store = new Store();
+        cart = new Cart();
 
         Book myBook = new Book();
         DVD myDVD = new DVD();

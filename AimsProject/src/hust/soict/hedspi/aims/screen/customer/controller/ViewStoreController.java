@@ -41,7 +41,7 @@ public class ViewStoreController {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource(ITEM_FXML_FILE_PATH));
 
-                ItemController itemController = new ItemController();
+                ItemController itemController = new ItemController(cart);
                 fxmlLoader.setController(itemController);
 
                 AnchorPane anchorPane = new AnchorPane();
@@ -63,16 +63,12 @@ public class ViewStoreController {
             }
         }
     }
-    public void btnPlayClicked(ActionEvent e) {
-        System.out.println("Clicked");
-    }
     @FXML
     public void btnViewCartPressed(ActionEvent e) {
         try {
             final String CART_FXML_FILE_PATH = "/hust/soict/hedspi/aims/screen/customer/view/Cart.fxml";
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(CART_FXML_FILE_PATH));
 
-            Cart cart = new Cart();
             fxmlLoader.setController(new CartController(store, cart));
 
             Parent root = fxmlLoader.load();

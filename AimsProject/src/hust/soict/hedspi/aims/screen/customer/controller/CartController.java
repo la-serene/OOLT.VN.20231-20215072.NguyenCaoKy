@@ -95,18 +95,15 @@ public class CartController {
             btnPlay.setVisible(media instanceof Playable);
         }
     }
-
     @FXML
     void btnRemovePressed(ActionEvent e) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         cart.removeMedia(media);
     }
-
     @FXML
     void btnPlayPressed(ActionEvent e) {
 
     }
-
     @FXML
     void btnViewStorePressed(ActionEvent e) {
         try {
