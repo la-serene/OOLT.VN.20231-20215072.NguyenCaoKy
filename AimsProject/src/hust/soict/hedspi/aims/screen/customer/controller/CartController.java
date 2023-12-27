@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -102,7 +103,25 @@ public class CartController {
     }
     @FXML
     void btnPlayPressed(ActionEvent e) {
+        try {
+            final String PLAYING_POPUP_PATH = "/hust/soict/hedspi/aims/screen/customer/view/PlayingPopUp.fxml";
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(PLAYING_POPUP_PATH));
+            Parent popUpRoot = fxmlLoader.load();
 
+            PlayingPopUpController playingPopUpController = fxmlLoader.getController();
+            Media media = tblMedia.getSelectionModel().getSelectedItem();
+            playingPopUpController.setPlayingText(media.getTitle(), media.getCost());
+
+            Stage popUpStage = new Stage();
+            popUpStage.initModality(Modality.NONE);
+            popUpStage.initOwner(((Node) e.getSource()).getScene().getWindow());
+            popUpStage.setScene(new Scene(popUpRoot));
+            popUpStage.setTitle("Playing~");
+            popUpStage.show();
+
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
     }
     @FXML
     void btnViewStorePressed(ActionEvent e) {
