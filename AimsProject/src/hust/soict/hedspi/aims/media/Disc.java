@@ -1,12 +1,14 @@
 package hust.soict.hedspi.aims.media;
 
+import hust.soict.hedspi.aims.exception.PlayerException;
+
 public class Disc extends Media implements Playable {
     private int length = 0;
     private String director;
     public Disc() {
         super();
     }
-    public void play() {}
+    public void play() throws PlayerException {}
     public int getLength() {
         return length;
     }

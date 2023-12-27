@@ -1,5 +1,7 @@
 package hust.soict.hedspi.aims.media;
 
+import hust.soict.hedspi.aims.exception.PlayerException;
+
 import javax.swing.*;
 
 public class DVD extends Disc {
@@ -17,12 +19,12 @@ public class DVD extends Disc {
     public boolean isMatch(String title) {
         return this.getTitle().equals(title);
     }
-    public void play() {
+    public void play() throws PlayerException {
         if (this.getLength() > 0) {
             System.out.println("Playing DVD: " + this.getTitle());
             System.out.println("DVD length: " + this.getLength());
         } else {
-            JOptionPane.showMessageDialog(null, "DVD cannot be displayed!", "Error", JOptionPane.ERROR_MESSAGE);
+            throw new PlayerException("ERROR: DVD Length is non-positive!");
         }
     }
 }
