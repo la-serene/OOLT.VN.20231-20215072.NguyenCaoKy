@@ -30,6 +30,6 @@ public class ItemController {
 
     }
     public void btnPlayClicked(ActionEvent e) {
-
+        System.out.println("Clicked");
     }
 }

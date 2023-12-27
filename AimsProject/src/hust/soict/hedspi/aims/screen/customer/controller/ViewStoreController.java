@@ -63,7 +63,9 @@ public class ViewStoreController {
             }
         }
     }
-
+    public void btnPlayClicked(ActionEvent e) {
+        System.out.println("Clicked");
+    }
     @FXML
     public void btnViewCartPressed(ActionEvent e) {
         try {
