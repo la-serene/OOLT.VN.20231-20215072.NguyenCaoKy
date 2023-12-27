@@ -94,6 +94,7 @@ public class CartController {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         cart.removeMedia(media);
         cart.setTotalCost(cart.getTotalCost() - media.getCost());
+        costLabel.setText(cart.getTotalCost() + "$");
     }
     @FXML
     void btnPlayPressed(ActionEvent e) {
