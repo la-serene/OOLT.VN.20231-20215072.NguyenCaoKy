@@ -22,7 +22,7 @@
         </Label>
         <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
         <Button minHeight="50.0" mnemonicParsing="false" prefWidth="100.0"
-                text="View Cart">
+                onAction="#btnViewCartPressed" text="View Cart">
             <HBox.margin>
                 <Insets right="20.0"/>
             </HBox.margin>

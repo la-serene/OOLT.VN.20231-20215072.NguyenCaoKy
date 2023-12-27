@@ -11,4 +11,5 @@ module AimsProject {
     exports hust.soict.hedspi.aims.screen.customer.controller;
     exports hust.soict.hedspi.aims.store;
     exports hust.soict.hedspi.aims.media;
+    exports hust.soict.hedspi.aims.cart;
 }
