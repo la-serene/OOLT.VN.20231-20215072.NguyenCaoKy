@@ -18,6 +18,7 @@ public abstract class Media {
             return false;
         } catch (NullPointerException | ClassCastException e) {
             e.printStackTrace();
+
             return false;
         }
     }
