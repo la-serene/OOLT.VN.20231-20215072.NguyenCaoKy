@@ -52,6 +52,12 @@ public class TestViewStoreScreen extends Application {
         store.addMedia(myCD);
         store.addMedia(myDVD);
 
+        DVD myDVD1 = new DVD();
+        myDVD1.setTitle("You, and the world like night!");
+        myDVD1.setLength(-20);
+        myDVD1.setCost(100);
+        store.addMedia(myDVD1);
+
         launch(args);
     }
 }
