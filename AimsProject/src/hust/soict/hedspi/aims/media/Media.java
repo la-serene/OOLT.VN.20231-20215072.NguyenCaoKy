@@ -11,10 +11,15 @@ public abstract class Media {
     public Media() { super(); }
 
     public boolean equals(Object o) {
-        if (o instanceof Media media)
-            return title.equals(media.title);
+        try {
+            if (o instanceof Media media)
+                return title.equals(media.title) && cost == media.cost;
 
-        return false;
+            return false;
+        } catch (NullPointerException | ClassCastException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
     public static final Comparator<Media> COMPARE_BY_TITLE_COST = Comparator.comparing(Media::getTitle)
             .thenComparing(Media::getCost);
