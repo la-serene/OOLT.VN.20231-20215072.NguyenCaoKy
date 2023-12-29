@@ -29,12 +29,14 @@ public class NotPlayableWarningController {
             if (media instanceof DVD) clsName = "DVD";
             else if (media instanceof CompactDisc) clsName = "CompactDisc";
 
+            NotPlayableWarningController notPlayableWarningController = fxmlLoader.getController();
+            notPlayableWarningController.tfWarning.setText("ERROR: " + clsName + " length is non-positive.");
+
             Stage popUpStage = new Stage();
             popUpStage.initModality(Modality.NONE);
             popUpStage.initOwner(((Node) e.getSource()).getScene().getWindow());
             popUpStage.setScene(new Scene(popUpRoot));
             popUpStage.setTitle("Illegal " + clsName + " Length");
-            tfWarning.setText("Error: " + clsName + " Length is non-positive.");
             popUpStage.show();
         } catch (IOException exception) {
             exception.printStackTrace();
