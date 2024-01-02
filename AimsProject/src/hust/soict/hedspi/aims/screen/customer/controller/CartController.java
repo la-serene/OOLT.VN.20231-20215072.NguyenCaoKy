@@ -28,7 +28,7 @@ public class CartController {
     @FXML
     public TableColumn<Media, String> colMediaCategory;
     @FXML
-    public TableColumn<Float, String> colMediaCost;
+    public TableColumn<Media, Float> colMediaCost;
     @FXML
     public Button btnRemove;
     @FXML
